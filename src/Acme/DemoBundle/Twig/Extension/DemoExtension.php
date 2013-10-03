@@ -16,7 +16,7 @@ class DemoExtension extends \Twig_Extension
 
     public function setController($controller)
     {
-        $this->controller = $controller;
+        $this->controller = $controller;//ploplopp
     }
 
     /**
