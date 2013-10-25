@@ -1,0 +1,7 @@
+parameters:
+#    samye_evt.example.class: Samye\EvtBundle\Example
+
+services:
+#    samye_evt.example:
+#        class: %samye_evt.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+samye_evt_test:
+    pattern: /test
+    defaults: {_controller: SamyeEvtBundle:Evt:test}
