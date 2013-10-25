@@ -1,0 +1,4 @@
+samye_evt:
+    resource: "@SamyeEvtBundle/Resources/config/routing.yml"
+    prefix:   /
+
