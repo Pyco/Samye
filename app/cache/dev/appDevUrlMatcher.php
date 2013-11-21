@@ -133,6 +133,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // samye_evt
+        if (preg_match('#^/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'samye_evt')), array (  '_controller' => 'Samye\\EvtBundle\\Controller\\EvtController::indexAction',));
+        }
+
         // samye_evt_test
         if ($pathinfo === '/test') {
             return array (  '_controller' => 'Samye\\EvtBundle\\Controller\\EvtController::testAction',  '_route' => 'samye_evt_test',);

@@ -1,3 +1,7 @@
+samye_evt:
+    pattern: /{name}
+    defaults: {_controller: SamyeEvtBundle:Evt:index}
+
 samye_evt_test:
     pattern: /test
     defaults: {_controller: SamyeEvtBundle:Evt:test}
