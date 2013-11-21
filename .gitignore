@@ -12,7 +12,7 @@
 *.pydevproject
 .project
 .metadata
-#bin/
+bin/
 tmp/
 *.tmp
 *.bak
@@ -64,7 +64,7 @@ build/
 *_i.c
 *_p.c
 *.ilk
-#*.meta
+*.meta
 *.obj
 *.pch
 *.pdb
@@ -82,10 +82,7 @@ build/
 *.vssscc
 .builds
 *.pidb
-#*.log
-!appDevDebugProjectContainerCompiler.log
-!dev.log
-!prod.log
+*.log
 *.scc
 
 # Visual C++ cache files
@@ -219,7 +216,7 @@ pip-log.txt
 .tox
 
 #Translations
-#*.mo
+*.mo
 
 #Mr Developer
 .mr.developer.cfg
