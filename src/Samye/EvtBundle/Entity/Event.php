@@ -5,12 +5,12 @@ namespace Samye\EvtBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Evenement
+ * Event
  *
- * @ORM\Table(name="evenement")
- * @ORM\Entity(repositoryClass="Samye\EvtBundle\Entity\EvenementRepository")
+ * @ORM\Table(name="event")
+ * @ORM\Entity(repositoryClass="Samye\EvtBundle\Entity\EventRepository")
  */
-class Evenement
+class Event
 {
 	
     /**
@@ -35,6 +35,20 @@ class Evenement
      * @ORM\Column(name="dateDeb", type="date")
      */
     private $dateDeb;
+	
+	 /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="heureDeb", type="time")
+     */
+	private $heureDeb;
+	
+	 /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="heureFin", type="time")
+     */
+	private $heureFin;
 
     /**
      * @var integer
@@ -49,20 +63,14 @@ class Evenement
      * @ORM\Column(name="lieu", type="string", length=255, nullable=true)
      */
     private $lieu;
+
+
+ 	public function __construct()
+	{
+		$this->dateDeb = new \Datetime;
+		$this->duree = 1;
+	}
 	
-	 /**
-     * @ORM\ManyToOne(targetEntity="Categorie_Evenement", inversedBy="evenements")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-     */
-    protected $category;
-
-	 /**
-     * @ORM\ManyToOne(targetEntity="Groupe", inversedBy="evenements")
-     * @ORM\JoinColumn(name="evenement_id", referencedColumnName="id")
-     */
-    protected $evenement;
-
-
     /**
      * Get id
      *
@@ -164,50 +172,28 @@ class Evenement
     {
         return $this->lieu;
     }
+	
+	
+	public function setHeureDeb($heureDeb)
+	{
+		$this->heureDeb = $heureDeb;
+		return $this->heureDeb;
+	}
+	
+	public function getHeureDeb()
+	{
+		return $this->heureDeb;
+	}
+	
+	public function setHeureFin($heureFin)
+	{
+		$this->heureFin = $heureFin;
 
-    /**
-     * Set category
-     *
-     * @param \Samye\EvtBundle\Entity\Categorie_Evenement $category
-     * @return Evenement
-     */
-    public function setCategory(\Samye\EvtBundle\Entity\Categorie_Evenement $category = null)
-    {
-        $this->category = $category;
-    
-        return $this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return \Samye\EvtBundle\Entity\Categorie_Evenement 
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
-     * Set evenement
-     *
-     * @param \Samye\EvtBundle\Entity\Groupe $evenement
-     * @return Evenement
-     */
-    public function setEvenement(\Samye\EvtBundle\Entity\Groupe $evenement = null)
-    {
-        $this->evenement = $evenement;
-    
-        return $this;
-    }
-
-    /**
-     * Get evenement
-     *
-     * @return \Samye\EvtBundle\Entity\Groupe 
-     */
-    public function getEvenement()
-    {
-        return $this->evenement;
-    }
+		return $this->heureFin;
+	}
+	
+	public function getHeureFin()
+	{
+		return $this->heureFin;
+	}
 }

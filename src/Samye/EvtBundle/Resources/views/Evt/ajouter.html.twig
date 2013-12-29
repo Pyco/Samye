@@ -1,19 +1,15 @@
 {% extends "SamyeEvtBundle::layout.html.twig" %}
 
+{% block title %}
+Evénements - {{ parent() }}
+{% endblock %}
+
 {% block body %}
-<div id='calendar'></div>
 
-<div id="creaEvent">
-	
-		<!--form id="formEvt" action="{{path('samye_evt_test')}}" method="post">
-			<label for="libelle">Libelle :</label>
-			<input type="text" name="libelle" class="libelle" />
-			<input type="button" value="Ajouter Evt" class="addEvt" />
+<h2>Ajouter un événément</h2>
 
-		</form>-->
-		
-		<form method="post" {{ form_enctype(form) }} id="formEvt" action="{{path('samye_evt_test')}}">
-	
+<form method="post" {{ form_enctype(form) }}>
+
 	<div>
 		{{ form_label(form.libelle,"Nom de l'événement") }}
 		{{ form_errors(form.libelle) }}
@@ -33,17 +29,14 @@
 		{{ form_label(form.heureDeb,"Début") }}
 		{{ form_errors(form.heureDeb) }}
 		{{ form_widget(form.heureDeb) }}
-	<div id="samye_evtbundle_hours">
-		{{ form_label(form.heureFin,"Fin") }}
-		{{ form_errors(form.heureFin) }}
-		{{ form_widget(form.heureFin) }}
-	</div>
-	
-	
+		<div id="samye_evtbundle_hours">
+			{{ form_label(form.heureFin,"Fin") }}
+			{{ form_errors(form.heureFin) }}
+			{{ form_widget(form.heureFin) }}
+		</div>
+
 		{{ form_rest(form) }}
-		<input type="submit" class="addEvt btn btn-primary" />
-	</form>
-	
-</div>
+		<input type="submit" class="btn btn-primary" />
+</form>
 
 {% endblock %}

@@ -1,0 +1,32 @@
+{% extends "SamyeEvtBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Evénements - {{ parent() }}
+{% endblock %}
+ 
+{% block body %}
+
+	<h2>Liste des événément</h2>
+		<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
+
+	
+	<table class="events">
+		<tr><th>Date</th><th>Heure</th><th>Evénement</th><th>Lieu</th><th></th></tr>
+		{% for event in events %}
+		<tr>
+			<td class="date">{{ event.dateDeb|date('d/m/Y') }}</td>
+			
+			<td class="date"> {{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</td>
+			
+			<td>{{ event.libelle }}</td>
+			
+			<td>{{ event.lieu }}</td>
+			
+			<td class="iconsCell">
+				<a href="{{ path('samye_modify',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a>
+				<a href="{{ path('samye_delete',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a>
+			</td>	
+		</tr>
+		{% endfor %}
+	</table>
+{% endblock %}
