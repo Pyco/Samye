@@ -1,0 +1,395 @@
+/*** COLORS ***
+	Green : #11A68D
+	Red : #D90107
+	
+	Dark Grey : #4B4B4B
+
+*** ****/
+
+html {
+	margin:0;
+	padding:0;
+	background:#fff;
+	font-family:Helvetica, Arial, sans-serif;
+}
+
+body {
+	margin:0;
+	padding:0;
+}
+
+#button {
+	display:inline-block;
+	margin: 30px 0 10px;
+	float:right;
+	background-image: linear-gradient(#444, #111);
+	height:40px;
+	width:200px;
+	line-height:40px;
+	font-size:16px;
+	font-weight:700;
+	color:#f0f0f0;
+	text-align:center;
+	text-decoration:none;
+	border-radius:5px;
+	box-shadow:1px 1px 4px #444;
+}
+
+#button:hover {
+	background:#09B336;
+}
+
+/********************
+*		HEADER		*
+********************/
+#header{
+	background-image: linear-gradient(#444, #111);
+	height:40px;
+	border-bottom:4px solid #09B336;
+	box-shadow:1px 1px 4px #444;
+}
+
+#headerContent {
+	margin:0 auto;
+	width:1180px;
+}
+
+#header img {
+	margin-right:50px;
+	padding-top:1px;
+	float:left;
+	height:38px;
+}
+
+#menu, #menu ul {
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+
+#menu {
+	width:1180px;
+}
+
+#menu:before,
+#menu:after {
+	content: "";
+	display: table;
+}
+
+#menu:after {
+	clear: both;
+}
+
+#menu {
+	zoom:1;
+}
+
+#menu li {
+	float: right;
+	position: relative;
+}
+
+#menu a {
+	font-size:12px;
+	float: left;
+	padding: 12px 30px;
+	color: #999;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #000;
+}
+
+#menu li:hover > a {
+	color: #fafafa;
+}
+
+*html #menu li a:hover { /* IE6 only */
+	color: #fafafa;
+}
+
+#menu ul {
+	_margin: 0; /*IE6 only*/
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 42px;
+	left: 0;
+	z-index: 1;    
+	background: #444;	
+	background: linear-gradient(#444, #111);
+	box-shadow: 0 -1px 0 rgba(255,255,255,.3);
+	border-radius: 3px;
+	transition: all .2s ease-in-out;  
+}
+
+#menu li:hover > ul {
+	opacity: 1;
+	visibility: visible;
+	margin: 0;
+}
+
+#menu ul ul {
+	top: 0;
+	left: 150px;
+	margin: 0 0 0 20px;
+	_margin: 0; /*IE6 only*/
+	box-shadow: -1px 0 0 rgba(255,255,255,.3);		
+}
+
+#menu ul li {
+	float: none;
+	display: block;
+	border: 0;
+	min-width:150px;
+	_line-height: 0; /*IE6 only*/
+	box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+}
+
+#menu ul li:last-child {   
+	box-shadow: none;    
+}
+
+#menu ul a {    
+	padding: 10px;
+	/*width: 130px;*/
+	_height: 10px; /*IE6 only*/
+	display: block;
+	white-space: nowrap;
+	float: none;
+	text-transform: none;
+}
+
+#menu ul a:hover {
+	background-color: #09B336;
+	background-image: linear-gradient(#47BF00, #09B336);
+}
+
+#srcBox {
+	float:left;
+	margin-top:6px;
+	margin-left:15px;
+	
+}
+/********************
+*		NAV		*
+********************/
+#nav {
+}
+
+/********************
+*		ROW		*
+********************/
+
+#row {
+	margin:0 auto;
+	width:1180px;
+}
+/********************
+*		LEFTMENU		*
+********************/
+#leftmenu {
+	float:left;
+}
+
+/********************
+*		CONTENT		*
+********************/
+#content{
+	margin:0 auto;
+	width:1180px;
+}
+
+h2 {
+	display:inline-block;
+	margin: 30px 0 10px;
+	padding:3px 20px;
+	font-size:18px;
+	font-weight:100;
+	color:#202020;
+	height:30px;
+	/*width:200px;*/
+	line-height:30px;
+	border:1px solid #e1e1e1;
+	border-radius: 5px;
+}
+
+.evtDate {
+	display:inline-block;
+	margin: 0 25px;
+	padding: 2px 5px 2px 15px;
+	width:100px;
+	height:30px;
+	line-height:30px;
+	color:#f0f0f0;
+	font-weight:700;
+	background-image: linear-gradient(#444, #111);
+	box-shadow:1px 1px 4px #444;
+	border-radius: 5px;
+}
+
+table.events{
+	width:1180px;
+	border-collapse:collapse;
+}
+
+table.events tr {
+	height:40px;
+	border-top:1px solid #e1e1e1;
+}
+
+table.events tr:hover {
+	background:#f9f9f9;
+}
+
+table.events tr th {
+	background:#f0f0f0;
+}
+
+table.events tr td {
+
+}
+
+table.events tr td.date {
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.iconsCell {
+	width:100px;
+}
+
+/********************
+*		FORM		*
+********************/
+form {
+	border:1px solid #e1e1e1;
+	border-radius:5px;
+	width:800px;
+	background:#f3f3f3;
+}
+
+form div {
+	margin:0 20px;
+	border-bottom:1px solid #d3d3d3;
+}
+
+label {
+	display:inline-block;
+	margin:10px 30px;
+	padding-right:30px;
+	width:200px;
+	text-align:right;
+	border-right:1px solid #d3d3d3;
+	color:#606060;
+	font-weight:bold;
+	font-size:14px;
+}
+
+/********************
+*		LOGIN FORM		*
+********************/
+
+#loginForm{
+	margin:100px auto;
+	padding-top:20px;
+	width:600px;
+	background-image: linear-gradient(#444, #111);
+	box-shadow:1px 1px 4px #444;
+}
+
+#loginForm label{
+	border:none;
+	color:#f3f3f3;
+}
+
+#loginForm input{
+	width:150px;
+}
+
+#loginForm input[type=submit]{
+	margin:20px 220px;
+	color:#202020;
+	background-image: linear-gradient(#fff, #e1e1e1);
+}
+
+div.alert, div.alert-error {
+	position:absolute;
+	top:150px;
+	margin:0 auto;
+	height:30px;
+	line-height:30px;
+	width:250px;
+	text-align:center;
+	background-image: linear-gradient(#B3090E, #B3090E);
+	border:1px solid #7F0001;
+	border-radius:5px;
+	font-size:12px;
+	font-weight:700;
+	opacity:0.75;
+	
+}
+
+/********************
+*		INPUT		*
+********************/
+input,select{
+	margin:0;
+    background: linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+    font-size: 13px;
+    color: #222222;
+    height: 24px;
+	width:440px;
+    padding-left: 15px;
+}
+
+input:focus, select:focus {
+	box-shadow: 0 1px 0 #09B336 inset, 0 -1px 0 #09B336 inset, 1px 0 0 #09B336 inset, -1px 0 0 #09B336 inset, 0 0 4px #09B336;
+	outline: none;
+}
+
+input[type=submit]{
+	display:inline-block;
+	margin:10px 310px;
+	padding:0;
+	width:100px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 -1px 0 rgba(0,0,0,0.05);
+	background:#606060;
+	color:#f0f0f0;
+}
+
+input[type=number]{
+	width:30px;
+}
+
+input[type=submit]:hover{
+	cursor:pointer;
+	box-shadow:0 0 4px #09B336;
+	border: none;
+}
+
+select {
+	width:80px;
+	border:none;
+
+}
+
+#samye_evtbundle_event_dateDeb{
+	display:inline-block;
+	margin:0;
+}
+#samye_evtbundle_hours div {
+	display:inline-block;
+	margin:0;
+}
+
+#calendar {
+	margin:0 auto;
+	width:860px;
+}
+
+

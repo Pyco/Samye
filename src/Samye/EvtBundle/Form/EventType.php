@@ -21,6 +21,11 @@ class EventType extends AbstractType
             ->add('lieu',		'text')
 			->add('heureDeb',	'time')
 			->add('heureFin',	'time')
+			->add('category', 	'entity',	array(
+											'class'		=>	'Samye\EvtBundle\Entity\EvtCategory',
+											'property'	=>	'libelle'						
+				));
+											
         ;
     }
     

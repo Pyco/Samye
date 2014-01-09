@@ -1,49 +1,19 @@
 {% extends "SamyeEvtBundle::layout.html.twig" %}
-
+ 
+{% block title %}
+  Evénements - {{ parent() }}
+{% endblock %}
+ 
 {% block body %}
-<div id='calendar'></div>
 
-<div id="creaEvent">
+	<h2>Projet Tutoré</h2>
 	
-		<!--form id="formEvt" action="{{path('samye_evt_test')}}" method="post">
-			<label for="libelle">Libelle :</label>
-			<input type="text" name="libelle" class="libelle" />
-			<input type="button" value="Ajouter Evt" class="addEvt" />
-
-		</form>-->
+	<div id="gimme_animals">
+		<h3>Contexte</h3>
+		<p>Il a toujours été dans les habitudes des associations d’organiser des évènements en tout genre. Par exemple une association sportive organise régulièrement des rencontre ou tournois alors qu’un centre de loisir prévoira une sortie cinéma ou la visite d’un musée. Le problème constaté est qu’il est fréquent que deux organismes similaires organisent un évènement similaire en même temps.</p>
+		<p>Par exemple il arrive que deux centres de loisirs se croisent lors d’une même sortie, alors que s’ils avaient été informés, ils auraient pu optimiser ensemble les ressources (transport ou restauration par exemple). Il arrive également que deux associations sportives organisent un tournoi en même temps à deux endroits différents, ce qui entraîne une baisse non négligeable du nombre de visiteurs pour les deux partis.</p>
 		
-		<form method="post" {{ form_enctype(form) }} id="formEvt" action="{{path('samye_evt_test')}}">
-	
-	<div>
-		{{ form_label(form.libelle,"Nom de l'événement") }}
-		{{ form_errors(form.libelle) }}
-		{{ form_widget(form.libelle) }}
-	</div>
-	<div>
-		{{ form_label(form.dateDeb,"Date de l'événement") }}
-		{{ form_errors(form.dateDeb) }}
-		{{ form_widget(form.dateDeb) }}
-	</div>
-	<div>
-		{{ form_label(form.duree,"Durée de l'événement") }}
-		{{ form_errors(form.duree) }}
-		{{ form_widget(form.duree) }}
-	</div>
-	<div id="samye_evtbundle_hours">
-		{{ form_label(form.heureDeb,"Début") }}
-		{{ form_errors(form.heureDeb) }}
-		{{ form_widget(form.heureDeb) }}
-	<div id="samye_evtbundle_hours">
-		{{ form_label(form.heureFin,"Fin") }}
-		{{ form_errors(form.heureFin) }}
-		{{ form_widget(form.heureFin) }}
-	</div>
-	
-	
-		{{ form_rest(form) }}
-		<input type="submit" class="addEvt btn btn-primary" />
-	</form>
-	
-</div>
-
+		<p>Ainsi la mairie de Belfort a ressenti le besoin d’une application qui centraliserait les évènements du territoire. Puis, il est envisagé d’étendre l’utilisation de l’application aux territoires voisins. Après un appel d’offre, elle a retenu l’entreprise MC Koala.Le but de l’application web SAMYE (Share And Manage Your Event) est d’éviter les désagréments décrit plus haut. Elle dispose de deux types de compte utilisateur : les associations et les mairies. Les associations peuvent créer un évènement, afficher leur calendrier et consulter les calendriers des autres associations. Quant à la mairie, elle peut être informée des évènements en cours et à venir.</p>
+		</div>
+ 
 {% endblock %}

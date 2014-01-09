@@ -6,12 +6,12 @@
  
 {% block body %}
 
-	<h2>Liste des événément</h2>
+	<h2>Liste des événéments</h2>
 		<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
 
 	
 	<table class="events">
-		<tr><th>Date</th><th>Heure</th><th>Evénement</th><th>Lieu</th><th></th></tr>
+		<tr><th>Date</th><th>Heure</th><th>Evénement</th><th>Lieu</th><th>Catégorie</th><th></th></tr>
 		{% for event in events %}
 		<tr>
 			<td class="date">{{ event.dateDeb|date('d/m/Y') }}</td>
@@ -22,10 +22,13 @@
 			
 			<td>{{ event.lieu }}</td>
 			
+			<td>{{ event.category().libelle }}</td>
+
 			<td class="iconsCell">
 				<a href="{{ path('samye_modify',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a>
 				<a href="{{ path('samye_delete',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a>
-			</td>	
+			</td>
+				
 		</tr>
 		{% endfor %}
 	</table>

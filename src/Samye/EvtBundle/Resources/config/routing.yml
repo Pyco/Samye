@@ -1,12 +1,6 @@
-samye_evt_index:
-    pattern: /test
+samye_index:
+    pattern: /
     defaults: {_controller: SamyeEvtBundle:Evt:index}
-    
-samye_evt_test:
-    pattern: /test/
-    defaults: {_controller: SamyeEvtBundle:Evt:addEvtCal}
-    requirements:
-        _method: POST
 
 samye_evt:
     pattern: /events
@@ -27,3 +21,13 @@ samye_modify:
 samye_delete:
     pattern: /delete/{id}
     defaults: {_controller: SamyeEvtBundle:Evt:delete}
+    
+samye_voir_evt_cal:
+    pattern: /vcal
+    defaults: {_controller: SamyeEvtBundle:Evt:voirEvtCal}
+
+samye_evt_cal:
+    pattern: /vcal/
+    defaults: {_controller: SamyeEvtBundle:Evt:evtCal}
+    requirements:
+        _method: POST

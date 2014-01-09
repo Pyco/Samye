@@ -1,43 +1,60 @@
 {# app/Resources/views/layout.html.twig #}
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Share and Manage Your Events{% endblock %}</title>
 
-    <title>{% block title %}Sdz{% endblock %}</title>
+		{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
+		
+		<link rel="stylesheet" href="{{ asset('css/fullcalendar.css') }}" type="text/css" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700,900,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,300,700' rel='stylesheet' type='text/css'>
+		{% endblock %}
+    </head>
+    <body>
+		<div id="header">
+			<div id="headerContent">
+				<a href="{{ path('samye_index') }}"><img src="{{ asset('img/logo2.png') }}" alt="" /></a>
+				<ul id="menu">
+					{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+						<li><a href="">{{ app.user.username }}</a>
+							<ul>
+								<li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
+								<li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+							</ul>
+						</li>
+						<li><a href="">Calendrier</a>
+						<ul>
+							<li><a href="{{ path('samye_evt') }}">Liste des événements</a></li>
+							<li><a href="{{ path('samye_voir_evt_cal') }}">Calendrier</a></li>
+						</ul>
+					</li>
+					{% endif %}
 
-    {% block stylesheets %}
-      <!--<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />-->
-      <link rel="stylesheet" href="{{ asset('js/fullcalendar/fullcalendar/fullcalendar.css') }}" type="text/css" />
-      <link rel="stylesheet" href="{{ asset('style.css') }}" type="text/css" />
-    {% endblock %}
-  </head>
+				</ul>
+				
 
-  <body>
-    <div class="wrapper">
-      <div id="header">
-        <h1>Mon Projet Symfony2 (layout général)</h1>       
-      </div>
-	
-	<div class="container">
-	{% block container %}
-	{% endblock %}
-	</div>
-      
+			</div>
+		</div>
+		<div id="nav">
+		</div>
+		<div id	="row">
+			<div id="content" class="span9">
+				{% block body %}
+				{% endblock %}
+			</div>
+		</div>
 
-      <footer>
-        <p>The sky's the limit © 2013 and beyond.</p>
-      </footer>
-    </div>
-
-  {% block javascripts %}
-    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
-    <script type="text/javascript" src="{{asset ('js/jquery.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('js/fullcalendar/lib/jquery-ui.custom.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/fullcalendar/fullcalendar/fullcalendar.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
-  {% endblock %}
-
-  </body>
+		<div id="footer">
+		</div>
+    
+		{% block javascripts %}
+			{# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+			<script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>			
+			<script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('js/fullcalendar/fullcalendar.min.js') }}"></script>
+		{% endblock %}
+	</body>
 </html>
