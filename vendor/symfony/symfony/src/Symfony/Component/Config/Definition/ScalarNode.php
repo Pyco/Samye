@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\Config\Definition;
 
+use Symfony\Component\Config\Definition\VariableNode;
 use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
 
 /**

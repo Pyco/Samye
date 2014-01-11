@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Bridge\ProxyManager\Tests\LazyProxy;
+namespace Symfony\Bridge\ProxyManager\LazyProxy\Tests;
 
 require_once __DIR__ . '/Fixtures/includes/foo.php';
 

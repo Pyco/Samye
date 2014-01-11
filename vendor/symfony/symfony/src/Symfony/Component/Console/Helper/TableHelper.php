@@ -389,8 +389,6 @@ class TableHelper extends Helper
             $width += strlen($cell) - mb_strlen($cell, $encoding);
         }
 
-        $width += $this->strlen($cell) - $this->computeLengthWithoutDecoration($cell);
-
         $this->output->write(sprintf(
             $cellFormat,
             str_pad(
@@ -454,7 +452,15 @@ class TableHelper extends Helper
      */
     private function getCellWidth(array $row, $column)
     {
-        return isset($row[$column]) ? $this->computeLengthWithoutDecoration($row[$column]) : 0;
+        if ($column < 0) {
+            return 0;
+        }
+
+        if (isset($row[$column])) {
+            return $this->strlen($row[$column]);
+        }
+
+        return $this->getCellWidth($row, $column - 1);
     }
 
     /**
@@ -464,18 +470,6 @@ class TableHelper extends Helper
     {
         $this->columnWidths = array();
         $this->numberOfColumns = null;
-    }
-
-    private function computeLengthWithoutDecoration($string)
-    {
-        $formatter = $this->output->getFormatter();
-        $isDecorated = $formatter->isDecorated();
-        $formatter->setDecorated(false);
-
-        $string = $formatter->format($string);
-        $formatter->setDecorated($isDecorated);
-
-        return $this->strlen($string);
     }
 
     /**

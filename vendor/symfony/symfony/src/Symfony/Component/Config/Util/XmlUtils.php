@@ -168,7 +168,7 @@ class XmlUtils
     }
 
     /**
-     * Converts an xml value to a PHP type.
+     * Converts an xml value to a php type.
      *
      * @param mixed $value
      *

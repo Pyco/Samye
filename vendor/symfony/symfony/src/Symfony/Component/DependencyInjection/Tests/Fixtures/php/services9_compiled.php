@@ -131,7 +131,6 @@ class ProjectServiceContainer extends Container
         $instance->initialize();
         $instance->foo = 'bar';
         $instance->moo = $a;
-        $instance->qux = array('bar' => 'foo is bar', 'foobar' => 'bar');
         sc_configure($instance);
 
         return $instance;

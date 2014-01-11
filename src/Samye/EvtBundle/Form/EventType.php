@@ -24,7 +24,11 @@ class EventType extends AbstractType
 			->add('category', 	'entity',	array(
 											'class'		=>	'Samye\EvtBundle\Entity\EvtCategory',
 											'property'	=>	'libelle'						
-				));
+				))
+			->add('status',		'entity',	array(
+											'class'		=>	'Samye\EvtBundle\Entity\EvtStatus',
+											'property'	=>	'libelle'
+				))
 											
         ;
     }

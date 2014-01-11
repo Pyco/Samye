@@ -208,7 +208,6 @@ h2 {
 	font-weight:100;
 	color:#202020;
 	height:30px;
-	/*width:200px;*/
 	line-height:30px;
 	border:1px solid #e1e1e1;
 	border-radius: 5px;
@@ -375,7 +374,10 @@ input[type=submit]:hover{
 select {
 	width:80px;
 	border:none;
+}
 
+#samye_evtbundle_category select{
+	width:455px;
 }
 
 #samye_evtbundle_event_dateDeb{
@@ -390,6 +392,15 @@ select {
 #calendar {
 	margin:0 auto;
 	width:860px;
+}
+
+/****************
+*	Special		*
+*****************/
+#gimme_animals{
+	margin:0 auto;
+	width:800px;
+	text-align:justify;
 }
 
 

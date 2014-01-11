@@ -80,7 +80,7 @@ class ProcessPipes
     }
 
     /**
-     * Closes Unix pipes.
+     * Closes unix pipes.
      *
      * Nothing happens in case file handles are used.
      */

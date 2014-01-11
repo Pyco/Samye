@@ -15,14 +15,9 @@ class EvtCategory
 {
 	
 	/**
-     * @ORM\OneToMany(targetEntity="Event", mappedBy="evtCategory")
+     * @ORM\OneToMany(targetEntity="Event", mappedBy="category")
      */
 	 protected $events;
-	 
-	 public function _construct()
-	 {
-		 $this->events = new ArrayCollection();
-	 }
 	 
     /**
      * @var integer
@@ -40,7 +35,14 @@ class EvtCategory
      */
     private $libelle;
 
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->events = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+	
     /**
      * Get id
      *
@@ -72,13 +74,6 @@ class EvtCategory
     public function getLibelle()
     {
         return $this->libelle;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->events = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**

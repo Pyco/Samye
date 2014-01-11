@@ -6,28 +6,38 @@ samye_evt:
     pattern: /events
     defaults: {_controller: SamyeEvtBundle:Evt:events}
 
-samye_voir:
-    pattern: /event/{id}
-    defaults: {_controller: SamyeEvtBundle:Evt:voir}
+samye_describe_event:
+    pattern: /descEvent/{id}
+    defaults: {_controller: SamyeEvtBundle:Evt:describeEvent}
 
 samye_add_event:
     pattern: /addEvent
     defaults: {_controller: SamyeEvtBundle:Evt:addEvent}
 
-samye_modify:
-    pattern: /modify/{id}
-    defaults: {_controller: SamyeEvtBundle:Evt:modify}
+samye_modify_event:
+    pattern: /modifyEvent/{id}
+    defaults: {_controller: SamyeEvtBundle:Evt:modifyEvent}
 
-samye_delete:
-    pattern: /delete/{id}
-    defaults: {_controller: SamyeEvtBundle:Evt:delete}
-    
-samye_voir_evt_cal:
-    pattern: /vcal
-    defaults: {_controller: SamyeEvtBundle:Evt:voirEvtCal}
+samye_delete_event:
+    pattern: /deleteEvent/{id}
+    defaults: {_controller: SamyeEvtBundle:Evt:deleteEvent}
 
-samye_evt_cal:
-    pattern: /vcal/
-    defaults: {_controller: SamyeEvtBundle:Evt:evtCal}
-    requirements:
-        _method: POST
+samye_categories:
+    pattern: /categories
+    defaults: {_controller: SamyeEvtBundle:Categories:categories}
+
+samye_show_category:
+    pattern: /category/{id}
+    defaults: {_controller: SamyeEvtBundle:Categories:showCategory}	
+
+samye_add_category:
+    pattern: /addCategory
+    defaults: {_controller: SamyeEvtBundle:Categories:addCategory}
+
+samye_modify_category:
+    pattern: /modifyCategory/{id}
+    defaults: {_controller: SamyeEvtBundle:Categories:modifyCategory}
+
+samye_delete_category:
+    pattern: /deleteCategory/{id}
+    defaults: {_controller: SamyeEvtBundle:Categories:deleteCategory}

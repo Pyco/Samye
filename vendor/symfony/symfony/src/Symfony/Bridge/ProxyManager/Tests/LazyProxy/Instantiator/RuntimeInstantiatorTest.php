@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Bridge\ProxyManager\Tests\LazyProxy\Instantiator;
+namespace Symfony\Bridge\ProxyManager\LazyProxy\Tests\Instantiator;
 
 use ProxyManager\Proxy\LazyLoadingInterface;
 use Symfony\Bridge\ProxyManager\LazyProxy\Instantiator\RuntimeInstantiator;

@@ -24,7 +24,7 @@ class PropelExtension extends AbstractExtension
     protected function loadTypes()
     {
         return array(
-            new Type\ModelType(PropertyAccess::createPropertyAccessor()),
+            new Type\ModelType(PropertyAccess::getPropertyAccessor()),
             new Type\TranslationCollectionType(),
             new Type\TranslationType()
         );

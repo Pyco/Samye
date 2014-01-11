@@ -12,6 +12,7 @@
 namespace Symfony\Component\Config\Definition;
 
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
+use Symfony\Component\Config\Definition\ScalarNode;
 
 /**
  * Node which only allows a finite set of values.

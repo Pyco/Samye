@@ -13,10 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Event
 {
 	/**
-     * @ORM\ManyToOne(targetEntity="EvtCategory", inversedBy="events")
+     * @ORM\ManyToOne(targetEntity="EvtCategory", inversedBy="events", cascade={"persist"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
+	
+	/**
+     * @ORM\ManyToOne(targetEntity="EvtStatus", inversedBy="events")
+     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
+     */
+    private $status;
  
     /**
      * @var integer
@@ -223,5 +229,28 @@ class Event
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set status
+     *
+     * @param \Samye\EvtBundle\Entity\EvtStatus $status
+     * @return Event
+     */
+    public function setStatus(\Samye\EvtBundle\Entity\EvtStatus $status = null)
+    {
+        $this->status = $status;
+    
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return \Samye\EvtBundle\Entity\EvtStatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }

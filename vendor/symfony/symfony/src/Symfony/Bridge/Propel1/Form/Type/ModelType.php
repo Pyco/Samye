@@ -57,7 +57,7 @@ class ModelType extends AbstractType
 
     public function __construct(PropertyAccessorInterface $propertyAccessor = null)
     {
-        $this->propertyAccessor = $propertyAccessor ?: PropertyAccess::createPropertyAccessor();
+        $this->propertyAccessor = $propertyAccessor ?: PropertyAccess::getPropertyAccessor();
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)

@@ -210,7 +210,7 @@ class ArrayNode extends BaseNode implements PrototypeNodeInterface
     public function addChild(NodeInterface $node)
     {
         $name = $node->getName();
-        if (!strlen($name)) {
+        if (empty($name)) {
             throw new \InvalidArgumentException('Child nodes must be named.');
         }
         if (isset($this->children[$name])) {
@@ -303,9 +303,9 @@ class ArrayNode extends BaseNode implements PrototypeNodeInterface
         $value = $this->remapXml($value);
 
         $normalized = array();
-        foreach ($value as $name => $val) {
-            if (isset($this->children[$name])) {
-                $normalized[$name] = $this->children[$name]->normalize($val);
+        foreach ($this->children as $name => $child) {
+            if (array_key_exists($name, $value)) {
+                $normalized[$name] = $child->normalize($value[$name]);
                 unset($value[$name]);
             }
         }

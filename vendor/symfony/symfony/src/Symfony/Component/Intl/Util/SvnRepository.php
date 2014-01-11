@@ -137,4 +137,5 @@ class SvnRepository
 
         return $this->svnInfo;
     }
+
 }

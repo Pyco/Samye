@@ -49,18 +49,18 @@ class EvtController extends Controller
 		return $this->render('SamyeEvtBundle:Evt:ajouter.html.twig',array('form' => $form->createView()));
 	}
 	
-	public function voirAction(){
+	public function desribeEventAction(Event $event){
 		
 		$repository = $this	->getDoctrine()
 							->getManager()
 							->getRepository('SamyeEvtBundle:Event');
 		
-		$eventList = $repository->findAll();
+		$eventList = $repository->findBy($event);
 		
 		return $this->render('SamyeEvtBundle:Evt:voir.html.twig');
 	}
 	
-	public function modifyAction(Event $event){
+	public function modifyEventAction(Event $event){
 		$em = $this->getDoctrine()->getManager();
 		$evt = $em->getRepository('SamyeEvtBundle:Event')->find('$event'); 
 		$form = $this->createForm(new EventType,$event);
@@ -89,7 +89,7 @@ class EvtController extends Controller
 		return $this->render('SamyeEvtBundle:Evt:modify.html.twig',array('form' => $form->createView()));
 	}	
 	
-	public function deleteAction(Event $event){
+	public function deleteEventAction(Event $event){
 		
 		$em = $this->getDoctrine()->getManager();
 		
@@ -100,51 +100,6 @@ class EvtController extends Controller
 		$em->remove($event);
 		$em->flush();
 		
-		return $this->render('SamyeEvtBundle:Evt:delete.html.twig');
-	}
-	
-	public function voirEvtCalAction(){
-		
-		return $this->render('SamyeEvtBundle:Evt:voirCal.html.twig');
-	}
-	
-	public function evtCalAction() {
-		$rq = $this->getRequest();
-
-		if ($rq -> isXmlHttpRequest()) {
-		$recLieu = $rq->request->get("lieu");
-		
-		$em = $this->getDoctrine()->getManager();
-		$qb = $em->createQueryBuilder();
-		
-		$qb->select('e')
-                  ->from('SamyeEvtBundle:Event', 'e')
-                   ->where("e.lieu = :lieu")
-                  ->setParameter('lieu', $recLieu);
-		
-		$lesEvents = $qb->getQuery()->getResult();
-		
-		foreach ($lesEvents as $evt) {
-			$tab[] = array(
-							'id' => $evt->getId(),
-							'title' => $evt->getLibelle(),
-							'start' => $evt->getDateDeb(),
-							);
-		}
-				
-		$response = new Response(json_encode($tab));		
-		$response->headers->set('Content-Type', 'application/json');
-		
-		return $response;
-		
-		
-		/*$response = new Response();
-		$response->setContent("pouet");
-		return $response;*/
-		} else {
-		$response = new Response();
-		$response->setContent("Caca");
-		return $response;
-		}
+		return $this->redirect($this->generateUrl('samye_evt'));
 	}
 }

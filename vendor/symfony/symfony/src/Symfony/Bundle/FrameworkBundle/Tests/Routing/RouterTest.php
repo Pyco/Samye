@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
-class RouterTest extends \PHPUnit_Framework_TestCase
+class RoutingTest extends \PHPUnit_Framework_TestCase
 {
     public function testGenerateWithServiceParam()
     {
