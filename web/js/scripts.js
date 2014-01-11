@@ -1,23 +1,6 @@
 $(document).ready(function() {
 
-    // page is now ready, initialize the calendar...
-
-    $('#calendar').fullCalendar({
-		
-			editable: true,
-			
-			events: "{{asset ('js/fullcalendar/fullcalendar/json-events.php')}}",
-			
-			eventDrop: function(event, delta) {
-				alert(event.title + ' was moved ' + delta + ' days\n' +
-					'(should probably update your database)');
-			},
-			
-			loading: function(bool) {
-				if (bool) $('#loading').show();
-				else $('#loading').hide();
-=======
-	
+    
 
 	//testAjax();
 
@@ -46,13 +29,6 @@ function resumeEvt(eventId) {
 		}
 	});
 }
-
-
-
-
-
-
-
 
 /*****************************************/
 function setEvts() {
@@ -102,7 +78,7 @@ function testAjax() {
 				} else {
 					alert("KO");
 				}
->>>>>>> accdc46a07edef13307cdd3fb13069e272511039
+
 			}
 			
 		});

@@ -19,8 +19,7 @@ class AppKernel extends Kernel
           
             new Samye\EvtBundle\SamyeEvtBundle(),
 			new FOS\UserBundle\FOSUserBundle(),
-            new Samye\UserBundle\SamyeUserBundle(),
-			new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle()
+            new Samye\UserBundle\SamyeUserBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

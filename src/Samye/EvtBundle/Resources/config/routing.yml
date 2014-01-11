@@ -41,3 +41,13 @@ samye_modify_category:
 samye_delete_category:
     pattern: /deleteCategory/{id}
     defaults: {_controller: SamyeEvtBundle:Categories:deleteCategory}
+
+samye_voir_evt_cal:
+    pattern: /vcal
+    defaults: {_controller: SamyeEvtBundle:Evt:voirEvtCal}
+
+samye_resume_evt_cal:
+    pattern: /vcal/
+    defaults: {_controller: SamyeEvtBundle:Evt:evtCal}
+    requirements:
+        _method: POST
