@@ -208,6 +208,7 @@ h2 {
 	font-weight:100;
 	color:#202020;
 	height:30px;
+	/*width:200px;*/
 	line-height:30px;
 	border:1px solid #e1e1e1;
 	border-radius: 5px;
@@ -389,7 +390,12 @@ select {
 	margin:0;
 }
 
+/********************
+*		Cal 		*
+********************/
+
 #calendar {
+	
 	margin:0 auto;
 	width:860px;
 }
@@ -398,6 +404,7 @@ select {
 *	Special		*
 *****************/
 #gimme_animals{
+	display: block;
 	margin:0 auto;
 	width:800px;
 	text-align:justify;
