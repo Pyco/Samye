@@ -16,5 +16,8 @@
 		<tr><td>Lieu : </td><td>{{ event.lieu }}</td></tr>
 		<tr><td>Catégorie : </td><td>{{ event.category().libelle }}</td></tr>
 		<tr><td>Statut : </td><td>{{ event.status().libelle }}</td></tr>
+		<tr><td>Participation : </td><td>{{ event.participation }}€</td></tr>
+		<tr><td>Description : </td><td>{{ event.description }}</td></tr>
+		<tr><td>Auteur : </td><td>{{ event.author }}</td></tr>
 	</table>
 {% endblock %}

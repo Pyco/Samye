@@ -98,7 +98,7 @@ class EvtController extends Controller
 		$em->remove($event);
 		$em->flush();
 		
-		return $this->render('SamyeEvtBundle:Evt:delete.html.twig');
+		return $this->redirect($this->generateUrl('samye_evt'));
 	}
 	
 	public function voirEvtCalAction(){

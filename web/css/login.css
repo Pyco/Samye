@@ -10,7 +10,7 @@
 *		LOGIN FORM		*
 ********************/
 
-form{
+form.login{
 	margin:100px auto;
 	padding-top:20px;
 	width:600px;
@@ -19,7 +19,7 @@ form{
 	border:1px solid #e1e1e1;
 	border-radius:5px;
 }
-input{
+.login input{
 	margin:0;
     background: linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
     border-radius: 3px;
@@ -32,7 +32,7 @@ input{
     padding-left: 15px;
 }
 
-label {
+.login label {
 	display:inline-block;
 	margin:10px 30px;
 	padding-right:30px;
@@ -46,7 +46,7 @@ label {
 
 
 
-input[type=submit]{
+.login input[type=submit]{
 	display:inline-block;
 	margin:20px 220px;
 	padding:0;
@@ -56,12 +56,12 @@ input[type=submit]{
 	background-image: linear-gradient(#fff, #e1e1e1);
 }
 
-input:focus {
+.login input:focus {
 	box-shadow: 0 1px 0 #09B336 inset, 0 -1px 0 #09B336 inset, 1px 0 0 #09B336 inset, -1px 0 0 #09B336 inset, 0 0 4px #09B336;
 	outline: none;
 }
 
-input[type=submit]:hover{
+.login input[type=submit]:hover{
 	cursor:pointer;
 	box-shadow:0 0 4px #09B336;
 }
@@ -81,7 +81,7 @@ div.alert, div.alert-error {
 	
 }
 
-input[type=checkbox]{
+.login input[type=checkbox]{
 	margin:20px 0 0 200px;
 	padding:0 0 0 20px;
 	display:inline-block;
@@ -94,7 +94,7 @@ input[type=checkbox]{
 	vertical-align: bottom;
 }
 
-label[for=remember_me]{
+.login label[for=remember_me]{
 	margin: 20px 0 0 0;
 	height:20px;
 	line-height:20px;

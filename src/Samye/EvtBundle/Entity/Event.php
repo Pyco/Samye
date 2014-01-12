@@ -74,12 +74,34 @@ class Event
      * @ORM\Column(name="lieu", type="string", length=255, nullable=true)
      */
     private $lieu;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+	private $description;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(name="participation", type="float", nullable=true)
+     */
+	private $participation;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(name="createdby", type="string", length=255, nullable=true)
+     */
+	private $author;
 
 
  	public function __construct()
-	{
+	{	
 		$this->dateDeb = new \Datetime;
 		$this->duree = 1;
+		$this->author = 'Ajouter automatiquement l\'auteur';
 	}
 	
     /**
@@ -252,5 +274,97 @@ class Event
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Event
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set participation
+     *
+     * @param float $participation
+     * @return Event
+     */
+    public function setParticipation($participation)
+    {
+        $this->participation = $participation;
+    
+        return $this;
+    }
+
+    /**
+     * Get participation
+     *
+     * @return float 
+     */
+    public function getParticipation()
+    {
+        return $this->participation;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param string $createdBy
+     * @return Event
+     */
+    public function setCreatedBy($createdBy)
+    {
+        $this->createdBy = $createdBy;
+    
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return string 
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
+     * Set author
+     *
+     * @param string $author
+     * @return Event
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return string 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }
