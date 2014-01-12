@@ -24,10 +24,16 @@
 								<li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
 							</ul>
 						</li>
-						<li><a href="">Calendrier</a>
+						<li><a href="{{ path('samye_voir_evt_cal') }}">Calendrier</a></li>
+						<li><a href="{{ path('samye_categories') }}">Catégories</a>
 						<ul>
-							<li><a href="{{ path('samye_evt') }}">Liste des événements</a></li>
-							<li><a href="{{ path('samye_voir_evt_cal') }}">Calendrier</a></li>
+							<li><a href="{{ path('samye_categories') }}">Liste des catégories</a></li>
+							<li><a href="{{ path('samye_add_category') }}">Créer une catégorie</a></li>
+						</ul>
+						<li><a href="{{ path('samye_evt') }}">Evénements</a>
+						<ul>
+							<li><a href="{{ path('samye_add_event') }}">Liste des événements</a></li>
+							<li><a href="{{ path('samye_add_event') }}">Créer un événement</a></li>
 						</ul>
 					</li>
 					{% endif %}

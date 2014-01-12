@@ -18,7 +18,7 @@
 			
 			<td class="date"> {{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</td>
 			
-			<td>{{ event.libelle }}</td>
+			<td><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></td>
 			
 			<td>{{ event.lieu }}</td>
 			

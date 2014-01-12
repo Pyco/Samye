@@ -31,7 +31,7 @@ class CategoriesController extends Controller
 
 	    $events = $category->getEvents();
 		
-		return $this->render('SamyeEvtBundle:Categories:byCategory.html.twig', array('events' => $events));
+		return $this->render('SamyeEvtBundle:Categories:byCategory.html.twig', array('cat' => $category, 'events' => $events));
 		
   }
   

@@ -6,9 +6,9 @@ samye_evt:
     pattern: /events
     defaults: {_controller: SamyeEvtBundle:Evt:events}
 
-samye_describe_event:
-    pattern: /descEvent/{id}
-    defaults: {_controller: SamyeEvtBundle:Evt:describeEvent}
+samye_show_event:
+    pattern: /showEvent/{id}
+    defaults: {_controller: SamyeEvtBundle:Evt:showEvent}
 
 samye_add_event:
     pattern: /addEvent

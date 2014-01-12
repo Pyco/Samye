@@ -1,0 +1,20 @@
+{% extends "SamyeEvtBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Evénements - {{ parent() }}
+{% endblock %}
+ 
+{% block body %}
+
+	<h2>Evénement : {{ event.libelle }}</h2>
+
+	<table>
+		<tr><td></td><td></td></tr>
+		<tr><td>Date : </td><td>{{ event.dateDeb|date('d/m/Y') }}</td></tr>
+		<tr><td>Durée : </td><td>{{ event.duree }}</td></tr>
+		<tr><td>Heure : </td><td>{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</td></tr>
+		<tr><td>Lieu : </td><td>{{ event.lieu }}</td></tr>
+		<tr><td>Catégorie : </td><td>{{ event.category().libelle }}</td></tr>
+		<tr><td>Statut : </td><td>{{ event.status().libelle }}</td></tr>
+	</table>
+{% endblock %}

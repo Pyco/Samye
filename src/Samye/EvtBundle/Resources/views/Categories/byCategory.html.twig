@@ -6,11 +6,10 @@
  
 {% block body %}
 
-	<h2>Liste des événéments</h2>
-		<a id="button" href="{{ path('samye_add_category') }}">Ajouter catégorie</a>
+	<h2>Liste des événéments - Catégorie : {{ cat.libelle }}</h2>
 
 	<table class="events">
-		<tr><th>Date</th><th>Heure</th><th>Evénement</th><th>Lieu</th><th>Catégorie</th><th>Statut</th><th></th></tr>
+		<tr><th>Date</th><th>Heure</th><th>Evénement</th><th>Lieu</th><th>Statut</th><th></th></tr>
 		{% for event in events %}
 		<tr>
 			<td class="date">{{ event.dateDeb|date('d/m/Y') }}</td>

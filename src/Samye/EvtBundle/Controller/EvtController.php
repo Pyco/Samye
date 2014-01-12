@@ -49,15 +49,13 @@ class EvtController extends Controller
 		return $this->render('SamyeEvtBundle:Evt:ajouter.html.twig',array('form' => $form->createView()));
 	}
 	
-	public function desribeEventAction(Event $event){
+	public function showEventAction(Event $event){
 		
-		$repository = $this	->getDoctrine()
-							->getManager()
-							->getRepository('SamyeEvtBundle:Event');
+		if (!$event) {
+        	throw $this->createNotFoundException('Aucun événement trouvé pour cet id : '.$id);
+    	}
 		
-		$eventList = $repository->findBy($event);
-		
-		return $this->render('SamyeEvtBundle:Evt:voir.html.twig');
+		return $this->render('SamyeEvtBundle:Evt:showEvent.html.twig', array('event' => $event));
 	}
 	
 	public function modifyEventAction(Event $event){
