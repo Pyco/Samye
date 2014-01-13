@@ -3,6 +3,7 @@
 namespace Samye\EvtBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\SecurityContext;
 
 /**
  * Event
@@ -12,6 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Event
 {
+	
+	/**
+     * @ORM\ManyToOne(targetEntity="Samye\UserBundle\Entity\User", inversedBy="events", cascade={"persist"})
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
+     */
+    private $author;
+	
 	/**
      * @ORM\ManyToOne(targetEntity="EvtCategory", inversedBy="events", cascade={"persist"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
@@ -88,20 +96,13 @@ class Event
      * @ORM\Column(name="participation", type="float", nullable=true)
      */
 	private $participation;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="createdby", type="string", length=255, nullable=true)
-     */
-	private $author;
 
 
  	public function __construct()
 	{	
 		$this->dateDeb = new \Datetime;
 		$this->duree = 1;
-		$this->author = 'Ajouter automatiquement l\'auteur';
+		//$this->author = $this->get('security.context')->getToken()->getUser()->getUsername();
 	}
 	
     /**

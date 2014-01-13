@@ -21,7 +21,9 @@ class CategoriesController extends Controller
   
   public function showCategoryAction($id)
   {
-		$category = $this	->getDoctrine()
+	 	$user		= $this->container->get('security.context')->getToken()->getUser();
+		
+		$category	= $this	->getDoctrine()
 							->getRepository('SamyeEvtBundle:EvtCategory')
 							->find($id);
 		
@@ -29,7 +31,11 @@ class CategoriesController extends Controller
         	throw $this->createNotFoundException('Aucune catégorie trouvée pour cet id : '.$id);
     	}
 
-	    $events = $category->getEvents();
+		$repository = $this	->getDoctrine()
+							->getManager()
+							->getRepository('SamyeEvtBundle:Event');
+		
+		$events 	= $repository->findBy(array('author' => $user, 'category' => $category));
 		
 		return $this->render('SamyeEvtBundle:Categories:byCategory.html.twig', array('cat' => $category, 'events' => $events));
 		

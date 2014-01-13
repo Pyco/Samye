@@ -8,14 +8,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class EventType extends AbstractType
 {
-        /**
-     * @param FormBuilderInterface $builder
-     * @param array $options
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-		
-		
+				
         $builder
             ->add('libelle',		'text')
             ->add('dateDeb',		'date')
@@ -32,8 +27,7 @@ class EventType extends AbstractType
 												'property'	=>	'libelle'
 				))
 			->add('participation',	'money')
-			->add('description',	'textarea')
-											
+			->add('description',	'textarea')											
         ;
     }
     
