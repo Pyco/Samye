@@ -6,6 +6,10 @@ samye_evt:
     pattern: /events
     defaults: {_controller: SamyeEvtBundle:Evt:events}
 
+samye_pers_evt:
+    pattern: /myEvents
+    defaults: {_controller: SamyeEvtBundle:Evt:personalEvents}
+
 samye_show_event:
     pattern: /showEvent/{id}
     defaults: {_controller: SamyeEvtBundle:Evt:showEvent}

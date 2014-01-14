@@ -16,7 +16,7 @@ class EvtController extends Controller
       	return $this->render('SamyeEvtBundle:Evt:index.html.twig');
     }
 	
-	public function eventsAction() {
+	public function personalEventsAction() {
 		
 		$user = $this->container->get('security.context')->getToken()->getUser();
 
@@ -26,6 +26,20 @@ class EvtController extends Controller
 		
 		//affiche les événements en fonction de l'utilisateur connecté
 		$eventList = $repository->findBy(array('author' => $user));
+		
+		return $this->render('SamyeEvtBundle:Evt:events.html.twig', array('events' => $eventList));
+	}
+	
+	public function eventsAction() {
+		
+		$user = $this->container->get('security.context')->getToken()->getUser();
+
+		$repository = $this	->getDoctrine()
+							->getManager()
+							->getRepository('SamyeEvtBundle:Event');
+		
+		//affiche les événements en fonction de l'utilisateur connecté
+		$eventList = $repository->findBy(array('status' => 2));
 		
 		return $this->render('SamyeEvtBundle:Evt:events.html.twig', array('events' => $eventList));
 	}
