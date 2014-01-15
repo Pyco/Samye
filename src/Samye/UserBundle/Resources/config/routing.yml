@@ -1,0 +1,11 @@
+samye_users:
+    pattern: /list
+    defaults: {_controller: SamyeUserBundle:Usr:showUsers}
+
+samye_edit_user:
+    pattern: /edit/{id}
+    defaults: {_controller: SamyeUserBundle:Usr:editUser}
+    
+samye_delete_user:
+    pattern: /delete/{id}
+    defaults: {_controller: SamyeUserBundle:Usr:delUser}

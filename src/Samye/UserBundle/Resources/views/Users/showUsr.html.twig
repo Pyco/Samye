@@ -1,0 +1,30 @@
+{% extends "SamyeUserBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Utilisateurs - {{ parent() }}
+{% endblock %}
+ 
+{% block body %}
+
+	<h2>Liste des Utilisateurs</h2>
+	
+	<table class="users">
+		<tr><th>Nom</th><th>Email</th><th>Type d'utilisateur</th></tr>
+		{% for usr in users %}
+		<tr>
+			<td>{{ usr.username }}</td>
+			
+			<td> {{ usr.email}}</td>
+			
+			<td> {{ usr.userType}}</td>
+			
+			<!--<td class="iconsCell">
+				<a href="{{ path('samye_edit_user',{'id':usr.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a>
+				<a href="{{ path('samye_delete_user',{'id':usr.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a>
+			</td>-->
+			
+				
+		</tr>
+		{% endfor %}
+	</table>
+{% endblock %}
