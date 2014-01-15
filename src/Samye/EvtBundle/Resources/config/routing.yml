@@ -2,9 +2,13 @@ samye_index:
     pattern: /
     defaults: {_controller: SamyeEvtBundle:Evt:index}
 
+samye_vueGenerale:
+    pattern: /vueGenerale
+    defaults: {_controller: SamyeEvtBundle:Evt:vueGenerale}
+
 samye_evt:
     pattern: /events
-    defaults: {_controller: SamyeEvtBundle:Evt:events}
+    defaults: {_controller: SamyeEvtBundle:Evt:allEvents}
 
 samye_pers_evt:
     pattern: /myEvents

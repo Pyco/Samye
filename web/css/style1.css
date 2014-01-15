@@ -1,0 +1,254 @@
+/**************************************/
+/*****************Color***************/
+/**************************************/
+
+/*Dark Grey : #2B2B28
+ * Green1 : #B1C601
+ * White : #F3F3F3
+ * Green2 : #6B752C
+ * Green3 : #ADC134 
+ */
+
+/**************************************/
+
+body{
+	margin:0;
+	padding:0;
+	background:#2B2B28;
+	font-size:12px;
+}
+#body{
+	font-family:Verdana, Arial, sans-serif;
+	width:100%;
+	float:left;
+}
+
+.clear {
+  clear: both;
+}
+
+.columnTenPercent{
+	width:10%;
+	float:left;
+}
+.columnFiftyPercent{
+	width:15%;
+	float:left;
+}
+.columnTwentyPercent{
+	width:20%;
+	float:left;
+}
+.columnTwentyFivePercent{
+	width:25%;
+	float:left;
+}
+.columnFivePercent{
+	width:5%;
+	float:left;
+}
+.titleRow{
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+	padding-top:3%;
+}
+.contentRow{
+	font-size:10px;
+	text-align:center;
+	padding-top:3%;
+}
+
+
+/**************************************/
+/*****************HEADER***************/
+/**************************************/
+
+#header{
+	width:100%;
+	float:left;
+}
+
+#topHeader{
+	width:100%;	
+	float:left;
+}
+
+#logo{
+	width:29%;
+	float:left;
+	padding-left:1%;
+	padding-top:1%;
+	padding-bottom:1%;
+}
+
+#menu{
+	width:70%;
+	float:left;
+	padding-top:3%;
+}
+
+#menu * {
+    list-style:none;
+    border:0;
+    padding:0;
+    margin:0;
+}
+#menu a {
+    display:block;
+    padding:7px 14px 7px 14px;
+    white-space:nowrap;
+}
+#menu li {
+    float:left;
+    background:#fff;
+}
+#menu li li {
+    float:none;
+    _border:1px solid #c4c4c4; /** fix for ie6 */
+}
+#menu div {
+    visibility:hidden;
+    position:absolute;
+    background:url(images/pix.gif);
+}
+#menu div div {
+    margin:-24px 0 0 -1px;
+    left:100%;
+}
+#menu li:hover>div { visibility:visible; }
+
+/* menu::special styles */
+/* menu::level 1 */
+#menu a {
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+    z-index:77;
+}
+#menu a:hover {
+    background:url(images/back.png);
+    color:#B1C601;
+}
+#menu a:hover span { color:#B1C601; }
+#menu>ul>li:hover>a {
+    color:#bbb;
+}
+#menu>ul>li:hover>a span { color:#B1C601; }
+#menu span {
+    text-transform:uppercase;
+    font:16px/22px 'Trebuchet MS', Arial, Helvetica, Sans-serif;
+    color:#fff;
+}
+#menu li { background:none; }
+/* menu::level >= 2 */
+
+#menu ul ul{
+	
+    background: #2B2B28;
+}
+
+#menu li li a {
+    padding:0;
+    position:static;
+}
+#menu li li a span { color:#fff;}
+#menu li li a:hover span { color:#ffffff; }
+#menu li li a.parent span { background:url(images/pointer.gif) no-repeat right 9px; _background-position:right 10px; }
+*+html #menu li li a.parent span { background-position:right 10px; }
+#menu li li span {
+    display:block;
+    text-transform:none;
+    line-height:16px;
+    padding:4px 25px 4px 14px;
+    font-size:11px;
+}
+#menu li div { background:url(images/back.png); }
+/** <fix for ie6> */
+#menu div div {
+    _margin-top:-25px;
+    _background:#c4c4c4;
+}
+
+/** </fix for ie6> */
+
+/* lava lamp */
+div#menu li.back {
+    width:10px;
+    height:32px;
+    z-index:8;
+    position:absolute;
+}
+div#menu li.back .left {
+    width:auto;
+    height:32px;
+    float:none;
+    position:relative;
+    top:0;
+    left:0;
+    visibility:visible;
+}
+
+#profilBar{
+	width:97%;
+	display:table;
+	margin:0 auto;
+	padding-top:1%;
+	padding-left:1%;
+	padding-right:1%;
+	padding-bottom:1%;
+	background:#B1C601;
+}
+
+a.profilBarIcon{
+	float:right;
+	margin:3px;
+}
+/**************************************/
+/*****************CONTENT**************/
+/**************************************/
+
+#contentAlign{
+	width:90%;
+	margin:0 auto;
+}
+
+#content{
+	width:96%;
+	margin-top:30px;
+	min-height:400px;
+	background:#F3F3F3;
+	padding:0.5% 2% 2% 2%;
+	float:left;
+}
+#contentLeft{
+	width:50%;
+	float:left;
+}
+#calendar {
+	
+	width:90%;
+}
+#contentRight{
+	width:48%;
+	float:left;
+}
+
+.listEvent{
+	float:left;
+}
+
+
+/****************************
+ *********FOOTER************** 
+ ****************************/
+
+#footer{
+	width:100%;
+	color:#fff;
+	padding-top:2%;
+	padding-left: 1%;
+	padding-bottom: 1%;
+	font-size: 10px;
+	text-align:center;
+}

@@ -70,5 +70,5 @@ fos_user:
     firewall_name: main
     user_class: Samye\UserBundle\Entity\User
     registration:
-        form:
-            type: samye_user_registration
+       form:
+           type: samye_user_registration

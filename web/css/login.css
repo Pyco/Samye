@@ -1,8 +1,8 @@
 /*** COLORS ***
-	Green : #11A68D
-	Red : #D90107
+	Green : #B1C601
+	White grey : #F3F3F3
+	Dark Grey : #2B2B28
 	
-	Dark Grey : #4B4B4B
 
 *** ****/
 
@@ -14,8 +14,8 @@ form.login{
 	margin:100px auto;
 	padding-top:20px;
 	width:600px;
-	background-image: linear-gradient(#444, #111);
-	box-shadow:1px 1px 4px #444;
+	background:#2B2B28;
+	box-shadow:1px 1px 4px #2B2B28;
 	border:1px solid #e1e1e1;
 	border-radius:5px;
 }
@@ -57,13 +57,13 @@ form.login{
 }
 
 .login input:focus {
-	box-shadow: 0 1px 0 #09B336 inset, 0 -1px 0 #09B336 inset, 1px 0 0 #09B336 inset, -1px 0 0 #09B336 inset, 0 0 4px #09B336;
+	box-shadow: 0 1px 0 #B1C601 inset, 0 -1px 0 #B1C601 inset, 1px 0 0 #B1C601 inset, -1px 0 0 #B1C601 inset, 0 0 4px #B1C601;
 	outline: none;
 }
 
 .login input[type=submit]:hover{
 	cursor:pointer;
-	box-shadow:0 0 4px #09B336;
+	box-shadow:0 0 4px #B1C601;
 }
 
 div.alert, div.alert-error {
@@ -88,7 +88,7 @@ div.alert, div.alert-error {
 	font-weight:bold;
 	font-size:14px;
 	border:none;
-	color:#222222;
+	color:#B1C601;
 	width:20px;
 	height:20px;
 	vertical-align: bottom;
@@ -103,4 +103,6 @@ div.alert, div.alert-error {
 	text-align:left;
 }
 
-
+#username{
+	background-color:#F3F3F3;
+}

@@ -3,15 +3,19 @@
 {% block title %}
   Evénements - {{ parent() }}
 {% endblock %}
-
-
  
-{% block body %}
 
-	<h2>Calendrier des événéments</h2>
-		
-	<div id="calendar"></div>
-	<div id="infoEvt"></div>
+{% block body %}
+	<div id="contentLeft">
+		<h2>Calendrier des événements</h2>
+			
+		<div id="calendar"></div>
+		<div id="infoEvt"></div>
+	</div>
+	<div id="contentRight">	
+		{%block right%}
+		{% endblock %}
+	</div>
 {% endblock %}
 
 
@@ -43,14 +47,15 @@ var date = new Date();
 		
 		
 	         // change the border color just for fun
-	        $(this).css('border-color', 'red');
+	        $(this).css('background-color', '#B1C601');
+	        $(this).css('border-color', '#B1C601');
 
    		},/*
    		dayClick: function(date, allDay, jsEvent, view) {
 		
 		
         // change the day's background color just for fun
-        $(this).css('background-color', 'red');
+        $(this).css('background-color', '#B1C601');
 
     }*/
 	});
