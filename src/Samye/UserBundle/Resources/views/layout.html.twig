@@ -1,9 +1,8 @@
 {# src/Samye/UserBundle/Resources/views/layout.html.twig #}
 
-{# On étend notre layout #}
+
 {% extends "::layout.html.twig" %}
 
-{# Dans notre layout, il faut définir le block body #}
 {% block body %}
 
   {# On affiche les messages flash que définissent les contrôleurs du bundle #}
@@ -13,7 +12,7 @@
     </div>
   {% endfor %}
 
-  {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
+ 
   {% block fos_user_content %}
   {% endblock fos_user_content %}
 

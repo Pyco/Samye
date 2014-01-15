@@ -14,16 +14,20 @@ function resumeEvt(eventId) {
 		type : "POST",
 		url : "/samye/web/app_dev.php/vcal/",
 		data : "id="+eventId,
+		dataType: "JSON",
 		success : function(msg) {
-
-			$.each(msg, function(i, item) {
-				$("#infoEvt").html("");
+			$("#infoEvt").html('');
+			for(var i in msg) {
+			
 				info += "<ul>";
-				info += "<li><p>"+item.title+"</p><p>"+item.id+"</p><li>";
+				info += "<li><p>"+msg[i].title+"</p><p>"+msg[i].id+"</p><li>";
 				info += "<ul>";
 		        $("#infoEvt").append(info);
+		     }   
+			/*$.each(msg, function(i, item) {
+				
 
-			});
+			});*/
 			//callback(tab);
 			
 		}

@@ -4,7 +4,7 @@ namespace Samye\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-use FOS\UserBundle\Entity\User as BaseUser;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * User
@@ -27,7 +27,14 @@ class User  extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
+	
+		
+	/**
+	 * @var string
+	 * @ORM\Column(name="userType", type="string", length=255)
+	 */
+	 
+	protected $userType;
 
     /**
      * Get id
@@ -38,6 +45,7 @@ class User  extends BaseUser
     {
         return $this->id;
     }
+
     /**
      * Constructor
      */
@@ -55,6 +63,20 @@ class User  extends BaseUser
     public function addEvent(\Samye\EvtBundle\Entity\Event $events)
     {
         $this->events[] = $events;
+
+	}
+    
+    
+    /**
+     * Set userType
+     *
+     * @param string $userType
+     * @return User
+     */
+    public function setUserType($userType)
+    {
+        $this->userType = $userType;
+
     
         return $this;
     }
@@ -78,4 +100,16 @@ class User  extends BaseUser
     {
         return $this->events;
     }
+
+     /* Get userType
+     *
+     * @return string 
+     */
+    public function getUserType()
+    {
+        return $this->userType;
+    }
+
+    
+
 }
