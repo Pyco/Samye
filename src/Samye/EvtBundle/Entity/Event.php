@@ -70,13 +70,6 @@ class Event
 	private $heureFin;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="duree", type="integer")
-     */
-    private $duree;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="lieu", type="string", length=255, nullable=true)

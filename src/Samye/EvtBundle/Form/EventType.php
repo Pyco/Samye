@@ -14,7 +14,6 @@ class EventType extends AbstractType
         $builder
             ->add('libelle',		'text')
             ->add('dateDeb',		'date')
-            ->add('duree',			'integer')
             ->add('lieu',			'text')
 			->add('heureDeb',		'time')
 			->add('heureFin',		'time')
