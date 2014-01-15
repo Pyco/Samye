@@ -69,3 +69,6 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Samye\UserBundle\Entity\User
+    registration:
+        form:
+            type: samye_user_registration
