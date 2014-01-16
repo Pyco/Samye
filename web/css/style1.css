@@ -374,7 +374,7 @@ input:focus, select:focus, textarea:focus{
 }
 
 .columnFiftyPercent input {
-	width:100%;
+	width:95%;
 }
 
 input[type=submit]{
@@ -394,13 +394,21 @@ input[type=number]{
 	width:100%;
 }
 
+#samye_evtbundle_participation {
+	font-size:14px;
+} 
+
+#samye_evtbundle_event_participation{
+	width:90%;
+}
+
 select,textarea {
 	border:none;
 }
 
 textarea {
 	font-family:Verdana, Geneva, sans-serif;
-	width:100%;
+	width:95%;
 }
 
 
