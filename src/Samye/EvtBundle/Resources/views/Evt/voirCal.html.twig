@@ -40,25 +40,31 @@ var date = new Date();
 		{% endfor %}
 		],
 		eventClick: function(calEvent, jsEvent, view) {
-		$('#insideRight').hide();
+		
+			if($('#insideRight').hasClass("hidden")) {
+			$('#resume').fadeOut(300, function() {
+				
+				resumeEvt(calEvent.id);
+				$('#resume a#button').fadeOut(300);
+			});
+		} else {
+			$('#insideRight').fadeOut(300).addClass("hidden");
+			$(this).fadeIn(750, function() {
+			
+				$('#resume #contentRows').html("");
+				resumeEvt(calEvent.id);
+				$('#resume a#button').fadeIn(800);
+			});
+		}
+		
 		$('#resume #contentRows').html("");
-		resumeEvt(calEvent.id);
+		$('#resume a#button').hide();	
+		
+		// change the border color just for fun
+	        //$(this).css('background-color', '#B1C601');
+	        //$(this).css('border-color', '#B1C601');
 			
-			
-		
-		
-	         // change the border color just for fun
-	        $(this).css('background-color', '#B1C601');
-	        $(this).css('border-color', '#B1C601');
-
-   		},/*
-   		dayClick: function(date, allDay, jsEvent, view) {
-		
-		
-        // change the day's background color just for fun
-        $(this).css('background-color', '#B1C601');
-
-    }*/
+   		},
 	});
 </script>
 {% endblock %}

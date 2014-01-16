@@ -28,7 +28,7 @@
 						{% for event in events %}
 							<div class="contentRow columnFifteenPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
 							<div class="contentRow columnTwentyPercent">{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</div>
-							<div class="contentRow columnTwentyPercent rowLink"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
+							<div class="contentRow columnTwentyPercent rowLink"><a class="detailEvt" data="{{event.id}}">{{ event.libelle }}</a></div>
 							<div class="contentRow columnTwentyFivePercent">{{ event.lieu }}</div>
 							<div class="contentRow columnTenPercent rowLink"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></div>
 							<div class="clear"></div>
@@ -43,6 +43,6 @@
 			<div id="contentRows">
 			
 			</div>	
-			
+			<a id="button">Retour</a>
 		</div>
 {% endblock %}

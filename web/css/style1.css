@@ -88,7 +88,7 @@ h2 {
 }
 
 .contentRow{
-	font-size:10px;
+	font-size:11px;
 	text-align:center;
 	padding-top:3%;
 	line-height:32px;
@@ -125,6 +125,7 @@ a#button {
 
 a#button:hover {
 	background:linear-gradient(#eaeaea,#ececec);
+	cursor: pointer;
 }
 
 /**************************************/
@@ -328,6 +329,31 @@ span.user{
 	width:75%;
 	margin:0 auto;
 }
+
+#contentRight {
+	position: relative;
+}
+
+#resume {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#resume table {
+	padding: 10px 20px;
+}
+
+#resume table td {
+	width: 50%;
+}
+
+#resume .contentRow {
+	text-align: left;
+	padding: 5px;
+	width: 100%;
+}
+
 /****************************
  *********FOOTER************** 
  ****************************/

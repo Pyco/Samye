@@ -1,7 +1,7 @@
 {% extends "SamyeEvtBundle:Evt:voirCal.html.twig" %}
  
 {% block right %}
-
+<div id="insideRight">
 	<h2>Mes événements</h2>
 		
 		<div id="buttonSet">
@@ -11,31 +11,6 @@
 		</div>
 		<div style="clear:both"></div>
 
-	
-	<!--<table class="events">
-		<tr><th>Date</th><th>Heure</th><th>Evénement</th><th>Lieu</th><th>Catégorie</th><th>Statut</th><th></th></tr>
-		{% for event in events %}
-		<tr>
-			<td class="date">{{ event.dateDeb|date('d/m/Y') }}</td>
-			
-			<td class="date"> {{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</td>
-			
-			<td><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></td>
-			
-			<td>{{ event.lieu }}</td>
-			
-			<td><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></td>
-			
-			<td>{{ event.status().libelle }}</td>
-
-			<td class="iconsCell">
-				<a href="{{ path('samye_modify_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a>
-				<a href="{{ path('samye_delete_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a>
-			</td>
-				
-		</tr>
-		{% endfor %}
-	</table>-->
 	<div id="list">
 		<div id="titleRow">					
 			<div class="titleRow columnFifteenPercent">Date</div>
@@ -52,7 +27,7 @@
 		{% for event in events %}
 			<div class="contentRow columnFifteenPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
 			<div class="contentRow columnTwentyPercent">{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</div>
-			<div class="contentRow columnTwentyPercent"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
+			<div class="contentRow columnTwentyPercent"><a  class="detailEvt" data="{{event.id}}">{{ event.libelle }}</a></div>
 			<div class="contentRow columnTwentyPercent">{{ event.lieu }}</div>
 			<div class="contentRow columnFivePercent"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></div>
 			<div class="contentRow columnTenPercent">{{ event.status().libelle }}</div>
@@ -63,4 +38,14 @@
 		{% endfor %}
 		</div>
 	</div>
+</div>
+
+<div id="resume">
+			<div id="contentRows">
+			
+			</div>	
+			<a id="button">Retour</a>
+		</div>
+
+
 {%endblock %}
