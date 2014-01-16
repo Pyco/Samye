@@ -37,7 +37,7 @@
 	            </div>
 	            <div id="profilBar">
 	          	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-	            	{{ app.user.username }}
+	            	<span class="user">{{ app.user.username }}</span>
 	            	<a href="{{ path('fos_user_security_logout') }}" class="profilBarIcon"><img src="{{ asset('img/logout.png') }}" alt="" /></a>
 	            	<a href="{{ path('fos_user_profile_show') }}" class="profilBarIcon"><img src="{{ asset('img/edit.png') }}" alt="" /></a>
 	            	<a href="" class="profilBarIcon"><img src="{{ asset('img/event.png') }}" alt="" /></a>

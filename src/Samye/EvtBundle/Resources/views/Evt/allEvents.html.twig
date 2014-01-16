@@ -1,10 +1,17 @@
 {% extends "SamyeEvtBundle:Evt:voirCal.html.twig" %}
 
 {% block right %}
-	<h2>Liste des événéments</h2>
-		<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
-		<a id="button" href="{{ path('samye_evt') }}">Evénements publics</a>
-		<a id="button" href="{{ path('samye_pers_evt') }}">Mes événements</a>
+
+		<div id="insideRight"></div>
+		<div id="resume"></div>
+		<h2>Liste des événéments</h2>
+		
+		<div id="buttonSet">
+			<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
+			<a id="button" href="{{ path('samye_evt') }}">Evénements publics</a>
+			<a id="button" href="{{ path('samye_pers_evt') }}">Mes événements</a>
+		</div>
+		<div style="clear:both"></div>
 
 	
 	<!--<table class="events">
@@ -44,9 +51,9 @@
 			{% for event in events %}
 				<div class="contentRow columnFifteenPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
 				<div class="contentRow columnTwentyPercent">{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</div>
-				<div class="contentRow columnTwentyPercent"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
+				<div class="contentRow columnTwentyPercent rowLink"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
 				<div class="contentRow columnTwentyFivePercent">{{ event.lieu }}</div>
-				<div class="contentRow columnTenPercent"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></div>
+				<div class="contentRow columnTenPercent rowLink"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></div>
 				<div class="clear"></div>
 			{% endfor %}	
 			</div>	
