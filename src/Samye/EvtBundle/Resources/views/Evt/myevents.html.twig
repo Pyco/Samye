@@ -2,7 +2,7 @@
  
 {% block right %}
 
-	<h2>Mes événéments</h2>
+	<h2>Mes événements</h2>
 		
 		<div id="buttonSet">
 			<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
@@ -36,7 +36,7 @@
 		</tr>
 		{% endfor %}
 	</table>-->
-	<div id="listEvent">
+	<div id="list">
 		<div id="titleRow">					
 			<div class="titleRow columnFifteenPercent">Date</div>
 			<div class="titleRow columnTwentyPercent">Heure</div>
@@ -58,6 +58,7 @@
 			<div class="contentRow columnTenPercent">{{ event.status().libelle }}</div>
 			<div class="contentRow columnFivePercent"><a href="{{ path('samye_modify_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a></div>
 			<div class="contentRow columnFivePercent"><a href="{{ path('samye_delete_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a></div>
+			<div class="clear"></div>
 		
 		{% endfor %}
 		</div>

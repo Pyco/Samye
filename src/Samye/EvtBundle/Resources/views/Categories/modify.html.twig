@@ -1,53 +1,24 @@
-{% extends "SamyeEvtBundle::layout.html.twig" %}
+{% extends "SamyeEvtBundle:Categories:categories.html.twig" %}
  
 {% block title %}
-  Evénements - {{ parent() }}
+  Modifier {{ parent() }}
 {% endblock %}
  
-{% block body %}
-
+{% block right %}
 	<h2>Modifier un événément</h2>
 
 	<form method="post" {{ form_enctype(form) }}>
-	
-	<div>
-		{{ form_label(form.libelle,"Nom de l'événement") }}
-		{{ form_errors(form.libelle) }}
-		{{ form_widget(form.libelle) }}
+	<div class="formAlign">
+		<div class="row">
+			<div class="columnFiftyPercent">{{ form_label(form.libelle,"Nom de la catégorie") }}</div>
+			{{ form_errors(form.libelle) }}
+			<div class="columnFiftyPercent">{{ form_widget(form.libelle) }}</div>
+		</div>
+		<div class="clear"></div>	
+			{{ form_rest(form) }}
+		<div class="row">
+			<input type="submit" class="btn btn-primary" />
+		</div>
 	</div>
-	<div>
-		{{ form_label(form.dateDeb,"Date de l'événement") }}
-		{{ form_errors(form.dateDeb) }}
-		{{ form_widget(form.dateDeb) }}
-	</div>
-	<div>
-		{{ form_label(form.duree,"Durée de l'événement") }}
-		{{ form_errors(form.duree) }}
-		{{ form_widget(form.duree) }}
-	</div>
-	<div id="samye_evtbundle_hours">
-		{{ form_label(form.heureDeb,"Début") }}
-		{{ form_errors(form.heureDeb) }}
-		{{ form_widget(form.heureDeb) }}
-	<div id="samye_evtbundle_hours">
-		{{ form_label(form.heureFin,"Fin") }}
-		{{ form_errors(form.heureFin) }}
-		{{ form_widget(form.heureFin) }}
-	</div>
-	<div id="samye_evtbundle_location">
-		{{ form_label(form.lieu,"Lieu") }}
-		{{ form_errors(form.lieu) }}
-		{{ form_widget(form.lieu) }}
-	</div>
-	<div id="samye_evtbundle_category">
-		{{ form_label(form.category,"Catégorie") }}
-		{{ form_errors(form.category) }}
-		{{ form_widget(form.category) }}
-	</div>
-	
-	
-		{{ form_rest(form) }}
-		<input type="submit" class="btn btn-primary" />
 	</form>
- 
 {% endblock %}

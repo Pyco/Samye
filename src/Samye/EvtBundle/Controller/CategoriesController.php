@@ -66,7 +66,7 @@ class CategoriesController extends Controller
 				$em->persist($category);
 				$em->flush();
 				
-				return $this->redirect($this->generateUrl('samye_categories'));
+				return $this->redirect($this->generateUrl('samye_add_category'));
 			}
 		}
 		
@@ -81,7 +81,7 @@ class CategoriesController extends Controller
 			
 		$em = $this->getDoctrine()->getManager();
 		$cat = $em->getRepository('SamyeEvtBundle:EvtCategory')->find('$category'); 
-		$form = $this->createForm(new EventType,$category);
+		$form = $this->createForm(new EvtCategoryType(),$category);
 		
 		$request = $this->get('request');
 		
@@ -93,15 +93,15 @@ class CategoriesController extends Controller
 				$em->persist($category);
 				$em->flush();
 				
-				return $this->redirect($this->generateUrl('samye_categories'));
+				return $this->redirect($this->generateUrl('samye_add_category'));
 			}
 		}
-		if (!$event) {
+		if (!$category) {
 			throw $this->createNotFoundException('Unable to find this entity.');
 		}
 
 		//CODE
-		$em->persist($event);
+		$em->persist($category);
 		$em->flush();
 		
 		return $this->render('SamyeEvtBundle:Categories:modify.html.twig',array('form' => $form->createView(),'categories' => $categoryList));
@@ -119,6 +119,6 @@ class CategoriesController extends Controller
 		$em->remove($category);
 		$em->flush();
 		
-		return $this->redirect($this->generateUrl('samye_categories'));
+		return $this->redirect($this->generateUrl('samye_add_category'));
 	}
 }

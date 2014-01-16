@@ -1,13 +1,13 @@
 {% extends "SamyeEvtBundle::layout.html.twig" %}
  
 {% block title %}
-  Evénements - {{ parent() }}
+  Catégorie - {{ parent() }}
 {% endblock %}
  
 {% block body %}
 
 
-	<div id="contentLeft">
+	<div id="contentLeft" class="category">
 		<h2>Liste des catégories</h2>
 		<!--<table class="events">
 			<th>Catégorie</th><th></th>
@@ -24,7 +24,7 @@
 			</tr>
 			{% endfor %}
 		</table>-->	
-		<div id="listCategories">
+		<div id="list">
 			{% for category in categories %}
 			<div class="contentRow">
 				<div class="columnFiftyPercent">{{ category.libelle }}</div>

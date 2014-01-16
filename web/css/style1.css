@@ -100,6 +100,11 @@ h2 {
 	margin-top:10px;
 	margin-bottom:10px;
 }
+.rowUser{
+	float:right;
+	margin-top:10px;
+	margin-bottom:10px;
+}
 div#buttonSet {
 	float:right;
 }
@@ -298,6 +303,11 @@ span.user{
 	width:50%;
 	float:left;
 }
+#contentLeft.category{
+	width:46%;
+	padding-right:4%;
+	float:left;
+}
 #calendar {
 	
 	width:90%;
@@ -307,7 +317,7 @@ span.user{
 	float:left;
 }
 
-#listEvent{
+#list{
 	border:1px solid #e1e1e1;
 	border-radius:4px;
 	padding-bottom:20px;

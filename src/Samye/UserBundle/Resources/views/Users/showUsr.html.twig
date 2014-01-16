@@ -1,17 +1,18 @@
 {% extends "SamyeUserBundle::layout.html.twig" %}
  
-{% block title %}
-  Utilisateurs - {{ parent() }}
-{% endblock %}
+
  
 {% block body %}
-
-	<h2>Liste des Utilisateurs</h2>
-	
-	<a href="{{ path('fos_user_registration_register') }}">CrÃ©er un utilisateur</a>
-	
-	<table class="users">
-		<tr><th>Nom</th><th>Email</th><th>Type d'utilisateur</th></tr>
+<div id="contentLeft">
+	<h2>Liste des Groupes</h2>
+	<div class="rowUser">
+		<div id="buttonSet">
+			<a id="button" href="{{ path('fos_user_registration_register') }}">Créer un groupe</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!--<table class="users">
+		<tr><th>Nom</th><th>Email</th><th>Type de groupe</th></tr>
 		{% for usr in users %}
 		<tr>
 			<td>{{ usr.username }}</td>
@@ -20,13 +21,42 @@
 			
 			<td> {{ usr.userType}}</td>
 			
-			<!--<td class="iconsCell">
+			<td class="iconsCell">
 				<a href="{{ path('samye_edit_user',{'id':usr.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a>
 				<a href="{{ path('samye_delete_user',{'id':usr.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a>
-			</td>-->
+			</td>
 			
 				
 		</tr>
 		{% endfor %}
-	</table>
+	</table>-->
+	<div id="list">
+		<div class="titleRow">
+			<div class="columnTwentyFivePercent">Nom</div>
+			<div class="columnFiftyPercent">Email</div>
+			<div class="columnTwentyFivePercent">Type de groupe</div>
+		</div>
+		<div class="clear"></div>
+		<div class="contentRows">
+			{% for usr in users %}
+			<div class="contentRow">
+				<div class="columnTwentyFivePercent">{{ usr.username }}</div>
+				
+				<div class="columnFiftyPercent"> {{ usr.email}}</div>
+				
+				<div class="columnTwentyFivePercent">{{ usr.userType}}</div>
+				
+				<!--<td class="iconsCell">
+					<a href="{{ path('samye_edit_user',{'id':usr.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a>
+					<a href="{{ path('samye_delete_user',{'id':usr.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a>
+				</td>-->
+				
+					
+			</div>
+			<div class="clear"></div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
 {% endblock %}

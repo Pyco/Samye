@@ -24,7 +24,7 @@ security:
 # Profile
 profile:
     show:
-        username: Nom d'utilisateur
+        username: Nom du groupe
         email: Adresse e-mail
     edit:
         submit: Mettre à jour
@@ -44,7 +44,7 @@ registration:
     back: Retour à la page d'origine.
     submit: Enregistrer
     flash:
-        user_created: L'utilisateur a été créé avec succès
+        user_created: Le groupe a été créé avec succès
     email:
         subject: Bienvenue %username% !
         message: |
