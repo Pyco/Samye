@@ -21,6 +21,7 @@ class UsrController extends Controller
 		$usrList = $userManager->findUsers();
 		
 		return $this->render('SamyeUserBundle:Users:showUsr.html.twig', array('users' => $usrList));
+		
 	}
 	
 	public function editUserAction(User $user) {

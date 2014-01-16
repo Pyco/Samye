@@ -1,8 +1,43 @@
-{% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
-    {{form_widget(form)}}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+
+	
+<form  action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+   <h2>Ajouter un groupe</h2>
+   <div class="formAlign">
+		<div class="row">
+			<div class="columnFiftyPercent">{{ form_label(form.username,"Nom de groupe : ") }}</div>
+			{{ form_errors(form.username) }}
+			<div class="columnFiftyPercent">{{ form_widget(form.username) }}</div>
+		</div>
+		<div class="clear"></div>
+		<div class="row">
+			<div class="columnFiftyPercent">{{ form_label(form.email,"Adresse email : ") }}</div>
+			{{ form_errors(form.email) }}
+			<div class="columnFiftyPercent">{{ form_widget(form.email) }}</div>
+		</div>
+		<div class="clear"></div>
+		<div class="row">
+			<div class="columnFiftyPercent">{{ form_label(form.plainPassword.first,"Mot de passe : ") }}</div>
+			{{ form_errors(form.plainPassword.first) }}
+			<div class="columnFiftyPercent">{{ form_widget(form.plainPassword.first) }}</div>
+		</div>
+		<div class="clear"></div>
+		<div class="row">
+			<div class="columnFiftyPercent">{{ form_label(form.plainPassword.second,"Vérification : ") }}</div>
+			{{ form_errors(form.plainPassword.second) }}
+			<div class="columnFiftyPercent">{{ form_widget(form.plainPassword.second) }}</div>
+		</div>
+		<div class="clear"></div>
+		<div class="row">
+			<div class="columnFiftyPercent">{{ form_label(form.userType,"Type de groupe : ") }}</div>
+			{{ form_errors(form.userType) }}
+			<div class="columnFiftyPercent">{{ form_widget(form.userType) }}</div>
+		</div>
+		<div class="clear"></div>
+		{{ form_rest(form) }}
+	<div class="row">
+        <input type="submit" value="Créer" />
     </div>
-</form>
+    </div>
+ </form
+    
