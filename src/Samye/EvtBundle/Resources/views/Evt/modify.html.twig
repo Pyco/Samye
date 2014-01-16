@@ -1,53 +1,75 @@
-{% extends "SamyeEvtBundle::layout.html.twig" %}
+{% extends "SamyeEvtBundle:Evt:voirCal.html.twig" %}
  
-{% block title %}
-  Evénements - {{ parent() }}
-{% endblock %}
- 
-{% block body %}
+{% block right %}
 
-	<h2>Modifier un événément</h2>
+	<h2>Modifier l'événément {{event.libelle}}</h2>
+	
+		<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
+		<a id="button" href="{{ path('samye_evt') }}">Evénements publics</a>
+		<a id="button" href="{{ path('samye_pers_evt') }}">Mes événements</a>
 
 	<form method="post" {{ form_enctype(form) }}>
 	
-	<div>
-		{{ form_label(form.libelle,"Nom de l'événement") }}
+	<div class="formAlign">
+	<div class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.libelle,"Nom de l'événement") }}</div>
 		{{ form_errors(form.libelle) }}
-		{{ form_widget(form.libelle) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.libelle) }}</div>
 	</div>
-	<div>
-		{{ form_label(form.dateDeb,"Date de l'événement") }}
+	<div class="clear"></div>
+	<div class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.dateDeb,"Date de l'événement") }}</div>
 		{{ form_errors(form.dateDeb) }}
-		{{ form_widget(form.dateDeb) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.dateDeb) }}</div>
 	</div>
-	<div>
-		{{ form_label(form.duree,"Durée de l'événement") }}
-		{{ form_errors(form.duree) }}
-		{{ form_widget(form.duree) }}
-	</div>
-	<div id="samye_evtbundle_hours">
-		{{ form_label(form.heureDeb,"Début") }}
+	<div class="clear"></div>
+	<div id="samye_evtbundle_hours" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.heureDeb,"Début") }}</div>
 		{{ form_errors(form.heureDeb) }}
-		{{ form_widget(form.heureDeb) }}
-	<div id="samye_evtbundle_hours">
-		{{ form_label(form.heureFin,"Fin") }}
+		<div class="columnFiftyPercent">{{ form_widget(form.heureDeb) }}</div>
+	</div>
+	<div class="clear"></div>
+	<div id="samye_evtbundle_hours" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.heureFin,"Fin") }}</div>
 		{{ form_errors(form.heureFin) }}
-		{{ form_widget(form.heureFin) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.heureFin) }}</div>
 	</div>
-	<div id="samye_evtbundle_location">
-		{{ form_label(form.lieu,"Lieu") }}
+	<div class="clear"></div>
+	<div id="samye_evtbundle_location" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.lieu,"Lieu") }}</div>
 		{{ form_errors(form.lieu) }}
-		{{ form_widget(form.lieu) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.lieu) }}</div>
 	</div>
-	<div id="samye_evtbundle_category">
-		{{ form_label(form.category,"Catégorie") }}
+	<div class="clear"></div>
+	<div id="samye_evtbundle_category" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.category,"Catégorie") }}</div>
 		{{ form_errors(form.category) }}
-		{{ form_widget(form.category) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.category) }}</div>
 	</div>
-	
+	<div class="clear"></div>
+	<div id="samye_evtbundle_status" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.status,"Statut") }}</div>
+		{{ form_errors(form.status) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.status) }}</div>
+	</div>
+	<div class="clear"></div>
+	<div id="samye_evtbundle_participation" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.participation,"Participation") }}</div>
+		{{ form_errors(form.participation) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.participation) }}</div>
+	</div>
+	<div class="clear"></div>
+	<div id="samye_evtbundle_description" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.description,"Description") }}</div>
+		{{ form_errors(form.description) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.description) }}</div>
+	</div>
+	<div class="clear"></div>
 	
 		{{ form_rest(form) }}
+	<div class="row">
 		<input type="submit" class="btn btn-primary" />
+	</div>
 	</form>
  
 {% endblock %}

@@ -8,10 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/style1.css') }}" type="text/css" />
         <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css" />		
 		<link rel="stylesheet" href="{{ asset('js/fullcalendar/fullcalendar.css') }}" type="text/css" />
-		
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700,900,300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,300,700' rel='stylesheet' type='text/css'>
-		 {% endblock %}
+		{% endblock %}
     </head>
     <body>    
 	    <div id="body">
@@ -28,7 +25,7 @@
 		                   	<div><ul>
 		                    	<li><span><a href="{{ path('samye_categories') }}">Liste des catégories</a></span></li>
 		                        <li><span><a href="{{ path('samye_add_category') }}">Créer une catégorie</a></span></li>
-		                        <li><span><a href="#">Liste des groupes</a></span></li>
+		                        <li><span><a href="{{ path('samye_users') }}">Liste des groupes</a></span></li>
 		                    </ul></div>
 		                   </li>
 		                   <li class="last"><a href="#"><span>Boîte à outils</span></a></li>
@@ -40,8 +37,8 @@
 	            </div>
 	            <div id="profilBar">
 	          	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-	            	{{ app.user.username }} | <a href=#>2 membres</a>
-	            	<a href="{{ path('fos_user_security_logout') }}" class="profilBarIcon"><img src="{{ asset('img/deconnection.png') }}" alt="" /></a>
+	            	{{ app.user.username }}
+	            	<a href="{{ path('fos_user_security_logout') }}" class="profilBarIcon"><img src="{{ asset('img/logout.png') }}" alt="" /></a>
 	            	<a href="{{ path('fos_user_profile_show') }}" class="profilBarIcon"><img src="{{ asset('img/edit.png') }}" alt="" /></a>
 	            	<a href="" class="profilBarIcon"><img src="{{ asset('img/event.png') }}" alt="" /></a>
 	            	<a href="" class="profilBarIcon"><img src="{{ asset('img/email.png') }}" alt="" /></a>	            

@@ -27,7 +27,7 @@ class EvtController extends Controller
 		//affiche les événements en fonction de l'utilisateur connecté
 		$eventList = $repository->findBy(array('author' => $user));
 		
-		return $this->render('SamyeEvtBundle:Evt:events.html.twig', array('events' => $eventList));
+		return $this->render('SamyeEvtBundle:Evt:myevents.html.twig', array('events' => $eventList));
 	}
 	
 	
@@ -40,7 +40,7 @@ class EvtController extends Controller
 							->getRepository('SamyeEvtBundle:Event');
 		
 		//affiche les événements en fonction de l'utilisateur connecté
-		$eventList = $repository->findBy(array('status' => 2));
+		$eventList = $repository->findBy(array('status' => 1));
 		
 		return $this->render('SamyeEvtBundle:Evt:allEvents.html.twig', array('events' => $eventList));
 	}
@@ -52,7 +52,7 @@ class EvtController extends Controller
 							->getManager()
 							->getRepository('SamyeEvtBundle:Event');
 		
-		$eventList = $repository->findAll();	
+		$eventList = $repository->findBy(array('status' => 1));
 		
 		$event = new Event();
 		
@@ -81,14 +81,29 @@ class EvtController extends Controller
 	
 	public function showEventAction(Event $event){
 		
+		$repository = $this	->getDoctrine()
+							->getManager()
+							->getRepository('SamyeEvtBundle:Event');
+		
+		//affiche les événements en fonction de l'utilisateur connecté
+		$eventList = $repository->findBy(array('status' => 1));
+		
 		if (!$event) {
         	throw $this->createNotFoundException('Aucun événement trouvé pour cet id : '.$id);
     	}
 		
-		return $this->render('SamyeEvtBundle:Evt:showEvent.html.twig', array('event' => $event));
+		return $this->render('SamyeEvtBundle:Evt:showEvent.html.twig', array('event' => $event, 'events'=>$eventList));
 	}
 	
 	public function modifyEventAction(Event $event){
+		
+		$repository = $this	->getDoctrine()
+							->getManager()
+							->getRepository('SamyeEvtBundle:Event');
+		
+		//affiche les événements en fonction de l'utilisateur connecté
+		$eventList = $repository->findBy(array('status' => 1));
+			
 		$em = $this->getDoctrine()->getManager();
 		$evt = $em->getRepository('SamyeEvtBundle:Event')->find('$event'); 
 		$form = $this->createForm(new EventType,$event);
@@ -114,7 +129,7 @@ class EvtController extends Controller
 		$em->persist($event);
 		$em->flush();
 		
-		return $this->render('SamyeEvtBundle:Evt:modify.html.twig',array('form' => $form->createView()));
+		return $this->render('SamyeEvtBundle:Evt:modify.html.twig',array('form' => $form->createView(), 'event'=>$event, 'events'=>$eventList));
 	}	
 	
 	public function deleteEventAction(Event $event){

@@ -33,7 +33,7 @@
 	</table>-->
 		<div id="listEvent">
 			<div id="titleRow">					
-				<div class="titleRow columnFiftyPercent">Date</div>
+				<div class="titleRow columnFifteenPercent">Date</div>
 				<div class="titleRow columnTwentyPercent">Heure</div>
 				<div class="titleRow columnTwentyPercent">&Eacute;vénement</div>
 				<div class="titleRow columnTwentyFivePercent">Lieu</div>
@@ -42,7 +42,7 @@
 			<div class="clear"></div>
 			<div id="contentRows">
 			{% for event in events %}
-				<div class="contentRow columnFiftyPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
+				<div class="contentRow columnFifteenPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
 				<div class="contentRow columnTwentyPercent">{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</div>
 				<div class="contentRow columnTwentyPercent"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
 				<div class="contentRow columnTwentyFivePercent">{{ event.lieu }}</div>

@@ -3,48 +3,73 @@
 {% block right %}
 
 	<h2>Ajouter un événement  à {{user.username}}</h2>
-
-	<form method="post" {{ form_enctype(form) }}>
 	
-	<div>
-		<div class="columnTwentyFivePercent">{{ form_label(form.libelle,"Nom de l'événement") }}</div>
+		<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
+		<a id="button" href="{{ path('samye_evt') }}">Evénements publics</a>
+		<a id="button" href="{{ path('samye_pers_evt') }}">Mes événements</a>
+		
+	<form method="post" {{ form_enctype(form) }}>
+	<div class="formAlign">
+	<div class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.libelle,"Nom de l'événement") }}</div>
 		{{ form_errors(form.libelle) }}
-		<div class="columnTwentyFivePercent">{{ form_widget(form.libelle) }}</div>
+		<div class="columnFiftyPercent">{{ form_widget(form.libelle) }}</div>
 	</div>
 	<div class="clear"></div>
-	<div>
-		<div class="columnTwentyFivePercent">{{ form_label(form.dateDeb,"Date de l'événement") }}</div>
+	<div class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.dateDeb,"Date de l'événement") }}</div>
 		{{ form_errors(form.dateDeb) }}
-		<div class="columnTwentyFivePercent">{{ form_widget(form.dateDeb) }}</div>
+		<div class="columnFiftyPercent">{{ form_widget(form.dateDeb) }}</div>
 	</div>
 	<div class="clear"></div>
-	<div id="samye_evtbundle_hours">
-		<div class="columnTwentyFivePercent">{{ form_label(form.heureDeb,"Début") }}</div>
+	<div id="samye_evtbundle_hours" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.heureDeb,"Début") }}</div>
 		{{ form_errors(form.heureDeb) }}
-		<div class="columnTwentyFivePercent">{{ form_widget(form.heureDeb) }}</div>
+		<div class="columnFiftyPercent">{{ form_widget(form.heureDeb) }}</div>
 	</div>
 	<div class="clear"></div>
-	<div id="samye_evtbundle_hours">
-		<div class="columnTwentyFivePercent">{{ form_label(form.heureFin,"Fin") }}</div>
+	<div id="samye_evtbundle_hours" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.heureFin,"Fin") }}</div>
 		{{ form_errors(form.heureFin) }}
-		<div class="columnTwentyFivePercent">{{ form_widget(form.heureFin) }}</div>
+		<div class="columnFiftyPercent">{{ form_widget(form.heureFin) }}</div>
 	</div>
 	<div class="clear"></div>
-	<div id="samye_evtbundle_location">
-		<div class="columnTwentyFivePercent">{{ form_label(form.lieu,"Lieu") }}</div>
+	<div id="samye_evtbundle_location" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.lieu,"Lieu") }}</div>
 		{{ form_errors(form.lieu) }}
-		<div class="columnTwentyFivePercent">{{ form_widget(form.lieu) }}</div>
+		<div class="columnFiftyPercent">{{ form_widget(form.lieu) }}</div>
 	</div>
 	<div class="clear"></div>
-	<div id="samye_evtbundle_category">
-		<div class="columnTwentyFivePercent">{{ form_label(form.category,"Catégorie") }}</div>
+	<div id="samye_evtbundle_category" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.category,"Catégorie") }}</div>
 		{{ form_errors(form.category) }}
-		<div class="columnTwentyFivePercent">{{ form_widget(form.category) }}</div>
+		<div class="columnFiftyPercent">{{ form_widget(form.category) }}</div>
+	</div>
+	<div class="clear"></div>
+	<div id="samye_evtbundle_status" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.status,"Statut") }}</div>
+		{{ form_errors(form.status) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.status) }}</div>
+	</div>
+	<div class="clear"></div>
+	<div id="samye_evtbundle_participation" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.participation,"Participation") }}</div>
+		{{ form_errors(form.participation) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.participation) }}</div>
+	</div>
+	<div class="clear"></div>
+	<div id="samye_evtbundle_description" class="row">
+		<div class="columnFiftyPercent">{{ form_label(form.description,"Description") }}</div>
+		{{ form_errors(form.description) }}
+		<div class="columnFiftyPercent">{{ form_widget(form.description) }}</div>
 	</div>
 	<div class="clear"></div>
 	
 		{{ form_rest(form) }}
+	<div class="row">
 		<input type="submit" class="btn btn-primary" />
+	</div>
+	</div>
 	</form>
  
 {% endblock %}
