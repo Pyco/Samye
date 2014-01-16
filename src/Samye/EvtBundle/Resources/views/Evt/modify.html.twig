@@ -3,10 +3,13 @@
 {% block right %}
 
 	<h2>Modifier l'événément {{event.libelle}}</h2>
-	
-		<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
-		<a id="button" href="{{ path('samye_evt') }}">Evénements publics</a>
-		<a id="button" href="{{ path('samye_pers_evt') }}">Mes événements</a>
+		
+		<div id="buttonSet">
+			<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
+			<a id="button" href="{{ path('samye_evt') }}">Evénements publics</a>
+			<a id="button" href="{{ path('samye_pers_evt') }}">Mes événements</a>
+		</div>
+		<div style="clear:both"></div>
 
 	<form method="post" {{ form_enctype(form) }}>
 	

@@ -264,20 +264,21 @@ html .fc,
 	}
 	 
 .fc-event {
-	border: 1px solid #2B2B28; /* default BORDER color */
-	background-color: #2B2B28; /* default BACKGROUND color */
-	color: #fff;               /* default TEXT color */
+	border: 1px solid #e1e1e1;
+	border-bottom:1px solid #cdcdcd; /* default BORDER color */ /* default BACKGROUND color */
+	color: #2b2b28;               /* default TEXT color */
 	font-size: .85em;
 	cursor: default;
 	}
 
 
 .fc-event-inner{
-	background-color: #2B2B28;
-	border:#2B2B28;
+	background:linear-gradient(#eaeaea,#ececec);
 }
-.fc-event-inner:hover :focus{
-	background-color: #B1C601;
+
+.fc-event-inner:hover{
+	cursor:pointer;
+	background:linear-gradient(#cacaca,#cccccc);
 }
 
 a.fc-event {
