@@ -15,7 +15,7 @@
 	        <div id="header">
 	            <div id="topHeader">
 	                <div id="logo">
-	                    <a href="{{ path('samye_evt') }}"><img src="{{ asset('img/logo2.png') }}" alt="" /></a>
+	                    <a href="{{ path('samye_evt') }}"><img src="{{ asset('img/logo2.png') }}" alt="ACCUEIL" /></a>
 	                </div>
 	                <div id="menu">
 		               <ul class="menu">
@@ -37,10 +37,10 @@
 	            <div id="profilBar">
 	          	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 	            	<span class="user">{{ app.user.username }}</span>
-	            	<a href="{{ path('fos_user_security_logout') }}" class="profilBarIcon"><img src="{{ asset('img/logout.png') }}" alt="" /></a>
-	            	<a href="{{ path('fos_user_profile_show') }}" class="profilBarIcon"><img src="{{ asset('img/edit.png') }}" alt="" /></a>
-	            	<a href="{{ path('samye_pending') }}" class="profilBarIcon"><img src="{{ asset('img/event.png') }}" alt="" /></a>
-	            	<a href="{{ path('samye_pending') }}" class="profilBarIcon"><img src="{{ asset('img/email.png') }}" alt="" /></a>	            
+	            	<a href="{{ path('fos_user_security_logout') }}" class="profilBarIcon"><img src="{{ asset('img/logout.png') }}" alt="Déconnexion" /></a>
+	            	<a href="{{ path('fos_user_profile_show') }}" class="profilBarIcon"><img src="{{ asset('img/edit.png') }}" alt="Profil" /></a>
+	            	<a href="{{ path('samye_pending') }}" class="profilBarIcon"><img src="{{ asset('img/event.png') }}" alt="A venir" /></a>
+	            	<a href="{{ path('samye_pending') }}" class="profilBarIcon"><img src="{{ asset('img/email.png') }}" alt="A venir" /></a>	            
 	            {% endif %}
 	            </div>	
 	            

@@ -1,6 +1,6 @@
 samye_index:
     pattern: /
-    defaults: {_controller: SamyeEvtBundle:Evt:index}
+    defaults: {_controller: SamyeEvtBundle:Evt:allEvents}
 
 samye_pending:
     pattern: /pending

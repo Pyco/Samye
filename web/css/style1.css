@@ -439,12 +439,57 @@ textarea {
 	border-radius:4px;
 }
 
-/****************
-*	Special		*
-****************
-#gimme_animals{
-	display: block;
-	margin:0 auto;	
-	text-align:justify;
+.fos_user_user_show {
+	margin: 24px 0;
+	background-color : #fcfcfc;
+}
+
+#avatar {
+	display:inline-block;
+	float:left;
+}
+
+#avatar img{
+	border-radius:4px;
+}
+
+#meta {
+	display:inline-block;
+	float:left;
+	margin-left:20px;
+	padding-left:20px;
+	width:30%;
+	border:1px solid #e1e1e1;
+	background:#fcfcfc;
+	padding:0 0 5px;
+	border-radius:4px;
+}
+
+span.metaInfos {
+	margin-left:30px;
+}
+
+span.metaUser {
+	text-transform:capitalize;
+}
+
+span.metaTitle {
+	display:block;
+	margin:10px 0 4px;
+	font-weight:bold;
+	margin-left:10px;
+}
+
+#metaButtonSet {
+	margin:20px 10px 0;
+	padding:20px 0 0 0;
+	border-top:1px solid #e1e1e1;
+}
+
+#metaButtonSet a {
+	display:inline-block;
+	margin-left:20px;
+	text-align:center;
+	width:40%;
 }
 
