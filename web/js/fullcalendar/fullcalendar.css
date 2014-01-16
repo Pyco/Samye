@@ -123,7 +123,8 @@ html .fc,
 	}
 	
 .fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
-	background: #fcf8e3;
+	line-height:16px;
+	background:linear-gradient(#fcfcfc,#fcfcfc);
 	}
 	
 .fc-cell-overlay { /* semi-transparent rectangle while dragging */

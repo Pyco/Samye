@@ -121,8 +121,8 @@ html .fc,
 	}
 	
 .fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
-	background: #fcf8e3;
-	}
+	background: #000;
+}
 	
 .fc-cell-overlay { /* semi-transparent rectangle while dragging */
 	background: #bce8f1;

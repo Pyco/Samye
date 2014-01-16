@@ -365,6 +365,7 @@ input,select, textarea{
     box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
     font-size: 13px;
     color: #2B2B28;
+	padding:4px;
 }
 
 input:focus, select:focus, textarea:focus{
