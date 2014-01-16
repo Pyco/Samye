@@ -7,8 +7,14 @@ samye_pending:
     defaults: {_controller: SamyeEvtBundle:Evt:pending}
 
 samye_evt:
-    pattern: /events
+    pattern: /allEvents
     defaults: {_controller: SamyeEvtBundle:Evt:allEvents}
+
+samye_show_evt1:
+    pattern: /allEvents/{id}
+    defaults: {_controller: SamyeEvtBundle:Evt:showEvent}
+    requirements:
+        _method: POST
 
 samye_pers_evt:
     pattern: /myEvents

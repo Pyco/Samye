@@ -2,60 +2,48 @@
 
 {% block right %}
 
-		<div id="insideRight"></div>
-		<div id="resume"></div>
-		<h2>Liste des événéments</h2>
-		
-		<div id="buttonSet">
-			<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
-			<a id="button" href="{{ path('samye_evt') }}">Evénements publics</a>
-			<a id="button" href="{{ path('samye_pers_evt') }}">Mes événements</a>
-		</div>
-		<div style="clear:both"></div>
-
-	
-	<!--<table class="events">
-		<tr><th class="one">Date</th><th class="two">Heure</th><th class="two">Evénement</th><th class="two">Lieu</th><th class="one">Catégorie</th><th class="one">Statut</th><th class="iconsCell"></th></tr>
-		{% for event in events %}
-		<tr>
-			<td class="date one">{{ event.dateDeb|date('d/m/Y') }}</td>
+		<div id="insideRight">
+			<h2>Liste des événéments</h2>
 			
-			<td class="date two"> {{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</td>
-			
-			<td class="two"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></td>
-			
-			<td class="two">{{ event.lieu }}</td>
-			
-			<td class="one"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></td>
-			
-			<td class="one">{{ event.status().libelle }}</td>
-
-			<td class="iconsCell">
-				<a href="{{ path('samye_modify_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a>
-				<a href="{{ path('samye_delete_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a>
-			</td>
-				
-		</tr>
-		{% endfor %}		
-	</table>-->
-		<div id="list">
-			<div id="titleRow">					
-				<div class="titleRow columnFifteenPercent">Date</div>
-				<div class="titleRow columnTwentyPercent">Heure</div>
-				<div class="titleRow columnTwentyPercent">&Eacute;vénement</div>
-				<div class="titleRow columnTwentyFivePercent">Lieu</div>
-				<div class="titleRow columnTenPercent">Cat.</div>
+			<div id="buttonSet">
+					<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
+					<a id="button" href="{{ path('samye_evt') }}">Evénements publics</a>
+					<a id="button" href="{{ path('samye_pers_evt') }}">Mes événements</a>
 			</div>
-			<div class="clear"></div>
+				
+				<div style="clear:both"></div>
+				
+			<div id="list">
+				<div id="titleRow">	
+					<div id="listEvent">
+						<div id="titleRow">					
+							<div class="titleRow columnFifteenPercent">Date</div>
+							<div class="titleRow columnTwentyPercent">Heure</div>
+							<div class="titleRow columnTwentyPercent">&Eacute;vénement</div>
+							<div class="titleRow columnTwentyFivePercent">Lieu</div>
+							<div class="titleRow columnTenPercent">Cat.</div>
+						</div>
+						<div class="clear"></div>
+						<div id="contentRows">
+						{% for event in events %}
+							<div class="contentRow columnFifteenPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
+							<div class="contentRow columnTwentyPercent">{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</div>
+							<div class="contentRow columnTwentyPercent rowLink"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
+							<div class="contentRow columnTwentyFivePercent">{{ event.lieu }}</div>
+							<div class="contentRow columnTenPercent rowLink"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></div>
+							<div class="clear"></div>
+						{% endfor %}	
+						</div>	
+					</div>
+			</div>
+		
+		</div>
+		
+		
+		<div id="resume">
 			<div id="contentRows">
-			{% for event in events %}
-				<div class="contentRow columnFifteenPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
-				<div class="contentRow columnTwentyPercent">{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</div>
-				<div class="contentRow columnTwentyPercent rowLink"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
-				<div class="contentRow columnTwentyFivePercent">{{ event.lieu }}</div>
-				<div class="contentRow columnTenPercent rowLink"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></div>
-				<div class="clear"></div>
-			{% endfor %}	
+			
 			</div>	
+			
 		</div>
 {% endblock %}

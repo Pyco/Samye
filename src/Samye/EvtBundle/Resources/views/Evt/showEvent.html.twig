@@ -1,10 +1,10 @@
-{% extends "SamyeEvtBundle::layout.html.twig" %}
+{% extends "SamyeEvtBundle:Evt:voirCal.html.twig" %}
  
 {% block title %}
   Evénements - {{ parent() }}
 {% endblock %}
  
-{% block body %}
+{% block right %}
 
 	<h2>Evénement : {{ event.libelle }}</h2>
 
@@ -19,4 +19,7 @@
 		<tr><td>Description : </td><td>{{ event.description }}</td></tr>
 		<tr><td>Auteur : </td><td>{{ event.author().username }}</td></tr>
 	</table>
+	
+	<!--<div id="resume"></div>-->
+	
 {% endblock %}

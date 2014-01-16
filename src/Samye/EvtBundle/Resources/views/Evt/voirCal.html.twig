@@ -40,7 +40,8 @@ var date = new Date();
 		{% endfor %}
 		],
 		eventClick: function(calEvent, jsEvent, view) {
-			
+		$('#insideRight').hide();
+		$('#resume #contentRows').html("");
 		resumeEvt(calEvent.id);
 			
 			

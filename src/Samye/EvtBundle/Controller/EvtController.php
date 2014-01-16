@@ -85,19 +85,55 @@ class EvtController extends Controller
 	}
 	
 	public function showEventAction(Event $event){
-		
-		$repository = $this	->getDoctrine()
-							->getManager()
-							->getRepository('SamyeEvtBundle:Event');
-		
-		//affiche les événements en fonction de l'utilisateur connecté
-		$eventList = $repository->findBy(array('status' => 1));
-		
-		if (!$event) {
+		$rq = $this->getRequest();
+
+		if ($rq -> isXmlHttpRequest()) {
+			
+			$recId = $rq->request->get("id");
+			
+			if (!$event) {
         	throw $this->createNotFoundException('Aucun événement trouvé pour cet id : '.$id);
-    	}
+	    	}
+			
+			$user = $this->container->get('security.context')->getToken()->getUser();
+	
+			$repository = $this	->getDoctrine()
+								->getManager()
+								->getRepository('SamyeEvtBundle:Event');
+			
+			//affiche les événements en fonction de l'utilisateur connecté
+			$eventList = $repository->findBy(array('id' => $recId));			
+			
+			foreach ($eventList as $evt) {
+				
+				$dateDeb = $evt->getDateDeb()->format("d - m - Y");
+				$heureDeb = $evt->getHeureDeb()->format("H:i:s");
+				$heureFin = $evt->getHeureFin()->format("H:i:s");
+				
+				
+				$tab[] = array(
+								'id' => $evt->getId(),
+								'libelle' => $evt->getLibelle(),
+								'date' => $dateDeb,
+								'heureDeb' => $heureDeb,
+								'heureFin' => $heureFin,
+								'lieu' => $evt->getLieu(),
+								'categorie' =>$evt->getCategory()->getLibelle(),
+								'status'=> $evt->getStatus()->getLibelle(),
+								'participation' => $evt->getParticipation(),
+								'description' => $evt->getDescription(),
+								'auteur' => $evt->getAuthor()->getUsername()
+								);
+			}		
+		}
+				
+		$response = new Response(json_encode($tab));		
+		$response->headers->set('Content-Type', 'application/json');
 		
-		return $this->render('SamyeEvtBundle:Evt:showEvent.html.twig', array('event' => $event, 'events'=>$eventList));
+		return $response;
+
+		
+		//return $this->render('SamyeEvtBundle:Evt:showEvent.html.twig', array('event' => $event, 'events' => $eventList));
 	}
 	
 	public function modifyEventAction(Event $event){

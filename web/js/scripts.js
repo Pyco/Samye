@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	
+	
 
     
 
@@ -7,23 +9,40 @@ $(document).ready(function() {
 });
 
 function resumeEvt(eventId) {
-	var tab = [];
+	var tab = "";
 	
 	
 	$.ajax({
 		type : "POST",
-		url : "/samye/web/app_dev.php/vcal/",
+		url : "/samye/web/app_dev.php/allEvents/"+eventId,
 		data : "id="+eventId,
 		dataType: "JSON",
 		success : function(msg) {
-			$("#infoEvt").html('');
-			for(var i in msg) {
 			
-				info += "<ul>";
-				info += "<li><p>"+msg[i].title+"</p><p>"+msg[i].id+"</p><li>";
-				info += "<ul>";
-		        $("#infoEvt").append(info);
-		     }   
+			;
+			
+			//dateDeb = new Date(msg[0].date, "mm/dd/yyyy");
+			
+			
+			//tab += "<div id='resume'>";
+			tab += "<h2>Evénement :"+msg[0].libelle+"</h2>";
+			tab += "<table><tr><td></td><td></td></tr><tr><td>Date : </td><td class='contentRow'>"+msg[0].date+"</td></tr>";
+			tab += "<tr><td>Heure : </td><td class='contentRow'>"+msg[0].heureDeb+" - "+msg[0].heureFin+"</td></tr>";
+			tab += "<tr><td>Lieu : </td><td class='contentRow'>"+msg[0].lieu+"</td></tr>";
+			tab += "<tr><td>Catégorie : </td><td class='contentRow'>"+msg[0].categorie+"</td></tr>";
+			tab += "<tr><td>Statut : </td><td class='contentRow'>"+msg[0].status+"</td></tr>";
+			tab += "<tr><td>Participation : </td><td class='contentRow'>"+msg[0].participation+"€</td></tr>";
+			tab += "<tr><td>Description : </td><td class='contentRow'>"+msg[0].description+"</td></tr>";
+			tab += "<tr><td>Auteur : </td><td class='contentRow'>"+msg[0].auteur+"</td></tr></table>";
+			//tab += "</div>";
+		
+			
+			$('#resume #contentRows').append(tab);
+			
+		
+		
+		
+			   
 			/*$.each(msg, function(i, item) {
 				
 
