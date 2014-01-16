@@ -23,6 +23,11 @@ class CategoriesController extends Controller
   {
 	 	$user		= $this->container->get('security.context')->getToken()->getUser();
 		
+		$categoryList = $this	->getDoctrine()
+								->getRepository('SamyeEvtBundle:EvtCategory')
+								->findAll();
+		
+		
 		$category	= $this	->getDoctrine()
 							->getRepository('SamyeEvtBundle:EvtCategory')
 							->find($id);
@@ -37,12 +42,17 @@ class CategoriesController extends Controller
 		
 		$events 	= $repository->findBy(array('author' => $user, 'category' => $category));
 		
-		return $this->render('SamyeEvtBundle:Categories:byCategory.html.twig', array('cat' => $category, 'events' => $events));
+		return $this->render('SamyeEvtBundle:Categories:byCategory.html.twig', array('cat' => $category, 'events' => $events, 'categories' => $categoryList));
 		
   }
   
   public function addCategoryAction()
   {
+	  $categoryList = $this	->getDoctrine()
+							->getRepository('SamyeEvtBundle:EvtCategory')
+							->findAll();
+		
+	  	 
 	  $category = new EvtCategory();
 		
 		$form = $this->createForm(new EvtCategoryType,$category);
@@ -60,10 +70,15 @@ class CategoriesController extends Controller
 			}
 		}
 		
-		return $this->render('SamyeEvtBundle:Categories:ajouter.html.twig',array('form' => $form->createView()));
+		return $this->render('SamyeEvtBundle:Categories:ajouter.html.twig',array('form' => $form->createView(),'categories' => $categoryList));
   }
   
   	public function modifyCategoryAction(EvtCategory $category){
+			
+		$categoryList = $this	->getDoctrine()
+								->getRepository('SamyeEvtBundle:EvtCategory')
+								->findAll();
+			
 		$em = $this->getDoctrine()->getManager();
 		$cat = $em->getRepository('SamyeEvtBundle:EvtCategory')->find('$category'); 
 		$form = $this->createForm(new EventType,$category);
@@ -89,10 +104,11 @@ class CategoriesController extends Controller
 		$em->persist($event);
 		$em->flush();
 		
-		return $this->render('SamyeEvtBundle:Categories:modify.html.twig',array('form' => $form->createView()));
+		return $this->render('SamyeEvtBundle:Categories:modify.html.twig',array('form' => $form->createView(),'categories' => $categoryList));
 	}	
 	
 	public function deleteCategoryAction(EvtCategory $category){
+			
 		
 		$em = $this->getDoctrine()->getManager();
 		

@@ -8,6 +8,8 @@
 
 	<h2>Liste des Utilisateurs</h2>
 	
+	<a href="{{ path('fos_user_registration_register') }}">CrÃ©er un utilisateur</a>
+	
 	<table class="users">
 		<tr><th>Nom</th><th>Email</th><th>Type d'utilisateur</th></tr>
 		{% for usr in users %}

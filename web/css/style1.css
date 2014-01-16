@@ -90,11 +90,12 @@ h2 {
 .contentRow{
 	font-size:10px;
 	text-align:center;
-	display:inline-block;
-	margin-top:3%;
+	padding-top:3%;
 	line-height:32px;
 	vertical-align:middle;
+	border-bottom:1px, #ececec;
 }
+
 .row{
 	margin-top:10px;
 	margin-bottom:10px;
@@ -313,7 +314,10 @@ span.user{
 	background:#fcfcfc;
 }
 
-
+#listCategories{
+	width:75%;
+	margin:0 auto;
+}
 /****************************
  *********FOOTER************** 
  ****************************/

@@ -2,7 +2,7 @@
  
 {% block right %}
 
-	<h2>Liste des événéments</h2>
+	<h2>Mes événéments</h2>
 		
 		<div id="buttonSet">
 			<a id="button" href="{{ path('samye_add_event') }}">Ajouter événément</a>
@@ -37,29 +37,29 @@
 		{% endfor %}
 	</table>-->
 	<div id="listEvent">
-				<div id="titleRow">					
-					<div class="titleRow columnFifteenPercent">Date</div>
-					<div class="titleRow columnTwentyPercent">Heure</div>
-					<div class="titleRow columnTwentyPercent">&Eacute;vénement</div>
-					<div class="titleRow columnTwentyPercent">Lieu</div>
-					<div class="titleRow columnFivePercent">Cat.</div>
-					<div class="titleRow columnTenPercent">Statut</div>
-					<div class="titleRow columnFivePercent"></div>
-					<div class="titleRow columnFivePercent"></div>
-				</div>
-				<div class="clear"></div>
-				<div id="contentRows">
-				{% for event in events %}
-					<div class="contentRow columnFifteenPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
-					<div class="contentRow columnTwentyPercent">{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</div>
-					<div class="contentRow columnTwentyPercent"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
-					<div class="contentRow columnTwentyPercent">{{ event.lieu }}</div>
-					<div class="contentRow columnFivePercent"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></div>
-					<div class="contentRow columnTenPercent">{{ event.status().libelle }}</div>
-					<div class="contentRow columnFivePercent"><a href="{{ path('samye_modify_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a></div>
-					<div class="contentRow columnFivePercent"><a href="{{ path('samye_delete_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a></div>
-				</div>
-				{% endfor %}	
-				</div>	
-			</div>
-{% endblock %}
+		<div id="titleRow">					
+			<div class="titleRow columnFifteenPercent">Date</div>
+			<div class="titleRow columnTwentyPercent">Heure</div>
+			<div class="titleRow columnTwentyPercent">&Eacute;vénement</div>
+			<div class="titleRow columnTwentyPercent">Lieu</div>
+			<div class="titleRow columnFivePercent">Cat.</div>
+			<div class="titleRow columnTenPercent">Statut</div>
+			<div class="titleRow columnFivePercent"></div>
+			<div class="titleRow columnFivePercent"></div>
+		</div>
+		<div class="clear"></div>
+		<div id="contentRows">
+		{% for event in events %}
+			<div class="contentRow columnFifteenPercent">{{ event.dateDeb|date('d/m/Y') }}</div>
+			<div class="contentRow columnTwentyPercent">{{ event.heureDeb|date('H:i')}} - {{ event.heureFin|date('H:i')}}</div>
+			<div class="contentRow columnTwentyPercent"><a href="{{ path('samye_show_event',{'id':event.id}) }}">{{ event.libelle }}</a></div>
+			<div class="contentRow columnTwentyPercent">{{ event.lieu }}</div>
+			<div class="contentRow columnFivePercent"><a href="{{ path('samye_show_category',{'id':event.category().id}) }}">{{ event.category().libelle }}</a></div>
+			<div class="contentRow columnTenPercent">{{ event.status().libelle }}</div>
+			<div class="contentRow columnFivePercent"><a href="{{ path('samye_modify_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/pen.png') }}"  width="32px" height="32px"/></a></div>
+			<div class="contentRow columnFivePercent"><a href="{{ path('samye_delete_event',{'id':event.id}) }}"><img class="icons" src="{{ asset('img/bin.png') }}"  width="32px" height="32px"/></a></div>
+		
+		{% endfor %}
+		</div>
+	</div>
+{%endblock %}

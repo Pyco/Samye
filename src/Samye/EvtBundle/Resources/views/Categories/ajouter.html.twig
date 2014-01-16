@@ -1,22 +1,26 @@
-{% extends "SamyeEvtBundle::layout.html.twig" %}
+{% extends "SamyeEvtBundle:Categories:categories.html.twig" %}
  
 {% block title %}
   Catégories - {{ parent() }}
 {% endblock %}
  
-{% block body %}
+{% block right %}
 
 	<h2>Ajouter une catégorie</h2>
 
 	<form method="post" {{ form_enctype(form) }}>
-	
-	<div>
-		{{ form_label(form.libelle,"Nom de la catégorie") }}
-		{{ form_errors(form.libelle) }}
-		{{ form_widget(form.libelle) }}
-	</div>	
-		{{ form_rest(form) }}
-		<input type="submit" class="btn btn-primary" />
+		<div class="formAlign">
+			<div class="row">
+				<div class="columnFiftyPercent">{{ form_label(form.libelle,"Nom de la catégorie") }}</div>
+				{{ form_errors(form.libelle) }}
+				<div class="columnFiftyPercent">{{ form_widget(form.libelle) }}</div>
+			</div>
+			<div class="clear"></div>	
+				{{ form_rest(form) }}
+			<div class="row">
+				<input type="submit" class="btn btn-primary" />
+			</div>
+		</div>
 	</form>
  
 {% endblock %}

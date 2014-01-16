@@ -23,12 +23,11 @@
 							<li><a href="{{ path('samye_evt') }}"><span>événements</span></a></li>
 		               		<li><a href="#" class="parent"><span>Les Groupes</span></a>
 		                   	<div><ul>
-		                    	<li><span><a href="{{ path('samye_categories') }}">Liste des catégories</a></span></li>
-		                        <li><span><a href="{{ path('samye_add_category') }}">Créer une catégorie</a></span></li>
+		                    	<li><span><a href="{{ path('samye_add_category') }}">Catégories</a></span></li>
 		                        <li><span><a href="{{ path('samye_users') }}">Liste des groupes</a></span></li>
 		                    </ul></div>
 		                   </li>
-		                   <li class="last"><a href="#"><span>Boîte à outils</span></a></li>
+		                   <li class="last"><a href="{{ path('samye_pending') }}"><span>Boîte à outils</span></a></li>
 		                        
 		                  </li>
 		                  {% endif %}	
@@ -40,8 +39,8 @@
 	            	<span class="user">{{ app.user.username }}</span>
 	            	<a href="{{ path('fos_user_security_logout') }}" class="profilBarIcon"><img src="{{ asset('img/logout.png') }}" alt="" /></a>
 	            	<a href="{{ path('fos_user_profile_show') }}" class="profilBarIcon"><img src="{{ asset('img/edit.png') }}" alt="" /></a>
-	            	<a href="" class="profilBarIcon"><img src="{{ asset('img/event.png') }}" alt="" /></a>
-	            	<a href="" class="profilBarIcon"><img src="{{ asset('img/email.png') }}" alt="" /></a>	            
+	            	<a href="{{ path('samye_pending') }}" class="profilBarIcon"><img src="{{ asset('img/event.png') }}" alt="" /></a>
+	            	<a href="{{ path('samye_pending') }}" class="profilBarIcon"><img src="{{ asset('img/email.png') }}" alt="" /></a>	            
 	            {% endif %}
 	            </div>	
 	            

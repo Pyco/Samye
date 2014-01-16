@@ -16,6 +16,11 @@ class EvtController extends Controller
       	return $this->render('SamyeEvtBundle:Evt:index.html.twig');
     }
 	
+	public function pendingAction()
+    {
+      	return $this->render('SamyeEvtBundle:futureFunctions:pending.html.twig');
+    }
+	
 	public function personalEventsAction() {
 		
 		$user = $this->container->get('security.context')->getToken()->getUser();
