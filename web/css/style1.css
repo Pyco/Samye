@@ -373,6 +373,10 @@ input:focus, select:focus, textarea:focus{
 	outline: none;
 }
 
+.columnFiftyPercent input {
+	width:100%;
+}
+
 input[type=submit]{
 	display:inline-block;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 -1px 0 rgba(0,0,0,0.05);
@@ -386,8 +390,17 @@ input[type=submit]:hover{
 	border: none;
 }
 
+input[type=number]{
+	width:100%;
+}
+
 select,textarea {
 	border:none;
+}
+
+textarea {
+	font-family:Verdana, Geneva, sans-serif;
+	width:100%;
 }
 
 
